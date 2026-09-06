@@ -1477,10 +1477,14 @@ textarea:focus{
 const LEAD_WEBHOOK_URL = "https://sheetdb.io/api/v1/j0hmxy8scfwqs";
 // 실제 Google Sheet 1행 컬럼명. 금액: 만원, 면적: 평, 비율: %.
 const SHEET_COLUMNS = {
-  createdAt:"createdAt", name:"name", phone:"phone", purpose:"purpose",
-  businessType:"businessType", monthlyRent:"monthlyRent", deposit:"deposit",
-  desiredArea:"area", officePrice:"purchasePrice", cash:"availableCash",
-  interestRate:"interestRate", compareYears:"years", message:"message"
+  createdAt:"상담신청 시간", property:"관심 현장", name:"이름/업체명", phone:"연락처",
+  moveDate:"입주 희망시기", purpose:"상담 목적", businessType:"개인/법인",
+  monthlyRent:"현재 월세", deposit:"현재 보증금", desiredArea:"희망 면적",
+  officePrice:"고객이 입력한 희망 사옥가격", cash:"현재 보유자금", loanRatio:"선택 대출비율",
+  loanAmount:"계산된 대출금", interestRate:"예상 금리", requiredEquity:"필요한 자기자금",
+  availableCash:"보증금 포함 가용자금", monthlyInterest:"예상 월 금융이자",
+  compareYears:"5년/10년", totalRent:"누적 월세", totalInterest:"누적 금융이자",
+  saving:"예상 누적 차이", savingRate:"예상 차이율", message:"추가 문의내용"
 };
 const byId = id => document.getElementById(id);
 const value = id => byId(id).value.trim();
@@ -1581,9 +1585,10 @@ async function submitLead(){
   status.textContent="상담 신청이 완료되었습니다. 입력해주신 조건을 기준으로 가능한 호실과 적용 조건을 확인 후 연락드리겠습니다.";
   button.textContent="✓ 상담 신청 완료";
  }catch(e){
+  const detail = e && e.message ? ` (오류: ${e.message})` : "";
   status.className="status error";
   status.textContent=sent
-   ?"서버의 저장 완료 응답을 확인하지 못했습니다. 이미 접수되었을 수 있으니 중복 신청 전에 010-2594-8306으로 접수 여부를 확인해주세요."
+   ?`자동 접수에 실패했습니다${detail} 잠시 후 다시 시도하거나 010-2594-8306으로 연락해주세요.`
    :"자동 접수에 실패했습니다. 잠시 후 다시 시도하거나 010-2594-8306으로 연락해주세요.";
   button.disabled=false;
   button.innerHTML=original;
@@ -1601,6 +1606,7 @@ document.querySelectorAll(".field").forEach(field=>{
 </script>
 </body>
 </html>
+
 
 
 

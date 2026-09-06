@@ -8,1676 +8,1603 @@
 
 <style>
 *{
-  box-sizing:border-box;
+    box-sizing:border-box;
 }
 
 :root{
-  --navy:#07182e;
-  --navy2:#0d294a;
-  --gold:#d9a847;
-  --gold2:#f3cf7a;
-  --green:#17805a;
-  --blue:#3b78bd;
-  --red:#c95555;
-  --bg:#f5f7fa;
-  --line:#dfe5ec;
-  --text:#202733;
-  --gray:#6d7886;
+    --navy:#07182e;
+    --navy2:#173e6c;
+    --gold:#d7a64a;
+    --gold2:#f3d38b;
+    --green:#137258;
+    --blue:#557bb8;
+    --red:#b84444;
+    --bg:#f4f6f8;
+    --line:#dce3e9;
+    --text:#202731;
+    --gray:#717c88;
 }
 
 body{
-  margin:0;
-  font-family:
-    Pretendard,
-    "Noto Sans KR",
-    "Apple SD Gothic Neo",
-    Arial,
-    sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.65;
+    font-family:
+        Pretendard,
+        "Noto Sans KR",
+        "Apple SD Gothic Neo",
+        Arial,
+        sans-serif;
 }
+
+
+/* HERO */
 
 .hero{
-  background:linear-gradient(135deg,#061426,#0c294b);
-  color:#fff;
-  padding:54px 20px 46px;
-  text-align:center;
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #17466f 0,
+            #0a2645 38%,
+            #061426 100%
+        );
+
+    color:white;
+    text-align:center;
+    padding:65px 20px 58px;
 }
 
-.badge{
-  display:inline-block;
-  padding:7px 15px;
-  border:1px solid rgba(243,207,122,.55);
-  border-radius:999px;
-  color:var(--gold2);
-  font-size:13px;
-  margin-bottom:17px;
+.hero-badge{
+    display:inline-block;
+    border:1px solid rgba(242,209,137,.6);
+    color:var(--gold2);
+    padding:7px 16px;
+    border-radius:100px;
+    font-size:13px;
+    font-weight:800;
+    margin-bottom:17px;
 }
 
 .hero h1{
-  margin:0;
-  font-size:clamp(31px,6vw,50px);
-  line-height:1.2;
+    margin:0;
+    font-size:clamp(30px,6vw,50px);
+    line-height:1.25;
 }
 
 .hero h1 span{
-  color:var(--gold2);
+    color:var(--gold2);
 }
 
 .hero p{
-  max-width:700px;
-  margin:16px auto 0;
-  color:#d2dbe6;
-  font-size:16px;
+    max-width:720px;
+    margin:18px auto 0;
+    color:#d4dfe9;
+    font-size:16px;
 }
 
+
+/* WRAPPER */
+
 .container{
-  width:min(960px,calc(100% - 24px));
-  margin:28px auto 70px;
+    width:min(920px,calc(100% - 24px));
+    margin:28px auto 70px;
 }
 
 .notice{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:20px;
-  margin-bottom:22px;
-  font-size:14px;
+    background:white;
+    border:1px solid var(--line);
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:22px;
+    font-size:14px;
 }
 
 .notice strong{
-  color:var(--navy2);
+    color:var(--navy);
 }
+
+
+/* CARD */
 
 .card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:20px;
-  box-shadow:0 8px 25px rgba(0,0,0,.045);
-  overflow:hidden;
-  margin-bottom:24px;
+    background:white;
+    border:1px solid var(--line);
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.04);
+    margin-bottom:23px;
 }
 
-.card-title{
-  background:var(--navy);
-  color:#fff;
-  padding:20px 22px;
+.card-head{
+    background:var(--navy);
+    color:white;
+    padding:22px 24px;
 }
 
-.card-title h2{
-  margin:0;
-  font-size:21px;
+.card-head h2{
+    margin:0;
+    font-size:22px;
 }
 
-.card-title p{
-  margin:4px 0 0;
-  color:#cbd5e0;
-  font-size:13px;
+.card-head p{
+    margin:5px 0 0;
+    font-size:13px;
+    color:#c6d2df;
 }
 
 .card-body{
-  padding:24px;
+    padding:26px;
 }
+
+
+/* FORM */
 
 .form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:19px;
 }
 
-.field{
-  margin-bottom:3px;
+.full{
+    grid-column:1/-1;
 }
 
-.field.full{
-  grid-column:1/-1;
-}
-
-label{
-  display:block;
-  margin-bottom:7px;
-  font-weight:800;
-  font-size:14px;
+.field label{
+    display:block;
+    font-size:14px;
+    font-weight:900;
+    margin-bottom:7px;
 }
 
 .help{
-  display:block;
-  color:#88929e;
-  font-size:12px;
-  font-weight:400;
-  margin-top:2px;
+    display:block;
+    font-size:12px;
+    font-weight:400;
+    color:#8b959f;
+    margin-top:2px;
 }
 
 .input-wrap{
-  position:relative;
+    position:relative;
 }
 
 input,
 select,
 textarea{
-  width:100%;
-  border:1px solid #ccd5df;
-  border-radius:11px;
-  font-size:15px;
-  outline:none;
-  background:#fff;
+    width:100%;
+    border:1px solid #cbd4dc;
+    border-radius:11px;
+    outline:none;
+    background:white;
+    font-size:15px;
 }
 
 input,
 select{
-  height:50px;
-  padding:0 45px 0 14px;
+    height:52px;
+    padding:0 50px 0 14px;
 }
 
 select{
-  padding-right:12px;
+    padding-right:14px;
 }
 
 textarea{
-  min-height:95px;
-  padding:12px 14px;
-  resize:vertical;
+    min-height:90px;
+    padding:13px;
+    resize:vertical;
 }
 
 input:focus,
 select:focus,
 textarea:focus{
-  border-color:#7195c2;
-  box-shadow:0 0 0 3px rgba(59,120,189,.08);
+    border-color:#6289b4;
+    box-shadow:0 0 0 3px rgba(70,124,180,.08);
 }
 
 .unit{
-  position:absolute;
-  right:14px;
-  top:50%;
-  transform:translateY(-50%);
-  color:#7d8793;
-  font-size:13px;
-  pointer-events:none;
+    position:absolute;
+    right:14px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:13px;
+    color:#7c8791;
 }
 
-.calculate{
-  width:100%;
-  margin-top:22px;
-  border:0;
-  border-radius:13px;
-  padding:17px;
-  font-size:18px;
-  font-weight:900;
-  background:linear-gradient(135deg,#c69239,#ebc66f);
-  color:#07182e;
-  cursor:pointer;
+
+/* OPTIONS */
+
+.choice-title{
+    margin-bottom:10px;
+    font-size:14px;
+    font-weight:900;
 }
 
-.calculate:hover{
-  filter:brightness(1.02);
+.choice-buttons{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
 }
+
+.period-buttons{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.choice-option input,
+.period-option input{
+    display:none;
+}
+
+.choice-option label,
+.period-option label{
+    display:block;
+    cursor:pointer;
+    border:2px solid #d9e0e6;
+    border-radius:12px;
+    padding:14px;
+    text-align:center;
+    font-weight:900;
+    transition:.2s;
+}
+
+.choice-option input:checked + label,
+.period-option input:checked + label{
+    border-color:var(--gold);
+    background:#fff9ea;
+    color:#8b621c;
+}
+
+
+/* BUTTON */
+
+.calculate-btn{
+    width:100%;
+    border:0;
+    border-radius:13px;
+    margin-top:25px;
+    padding:18px;
+    cursor:pointer;
+    color:var(--navy);
+    font-size:18px;
+    font-weight:900;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c49a49,
+            #e4c56f
+        );
+}
+
+
+/* RESULT */
 
 .results{
-  display:none;
+    display:none;
 }
 
-.result-summary{
-  background:linear-gradient(135deg,#07182e,#0e3158);
-  color:#fff;
-  border-radius:20px;
-  padding:28px 22px;
-  text-align:center;
-  margin-bottom:22px;
+.compare-hero{
+    background:
+        linear-gradient(
+            135deg,
+            #07182e,
+            #173e6c
+        );
+
+    color:white;
+    border-radius:20px;
+    padding:30px 22px;
+    margin-bottom:18px;
+    text-align:center;
 }
 
-.result-summary small{
-  color:#b9c8d8;
+.compare-hero small{
+    color:#bcd0e3;
 }
 
-.result-summary h2{
-  margin:8px 0 9px;
-  font-size:clamp(25px,5vw,36px);
-  color:var(--gold2);
+.compare-hero h2{
+    margin:6px 0 7px;
+    color:var(--gold2);
+    font-size:26px;
 }
 
-.result-summary p{
-  max-width:700px;
-  margin:0 auto;
-  color:#e0e7ee;
+.compare-hero p{
+    max-width:680px;
+    margin:0 auto;
+    color:#d6e1eb;
+    font-size:14px;
 }
 
-.core-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
-  margin-bottom:22px;
+
+/* MONEY */
+
+.money-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-bottom:20px;
 }
 
-.core{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:15px;
-  padding:19px 14px;
-  text-align:center;
+.money-box{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:15px;
+    padding:19px 12px;
+    text-align:center;
 }
 
-.core span{
-  color:var(--gray);
-  font-size:13px;
+.money-box span{
+    display:block;
+    color:var(--gray);
+    font-size:12px;
 }
 
-.core strong{
-  display:block;
-  margin-top:6px;
-  color:var(--navy);
-  font-size:20px;
+.money-box strong{
+    display:block;
+    margin-top:4px;
+    color:var(--navy);
+    font-size:21px;
 }
 
-.simple-compare{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:22px;
-  margin-bottom:24px;
+.money-box.highlight{
+    border:2px solid var(--gold);
+    background:#fffaf0;
 }
 
-.simple-compare h3{
-  margin:0 0 18px;
-  color:var(--navy);
+.money-box.good strong{
+    color:var(--green);
 }
 
-.compare-line{
-  margin-bottom:18px;
+.money-box.danger strong{
+    color:var(--red);
 }
 
-.compare-info{
-  display:flex;
-  justify-content:space-between;
-  gap:12px;
-  margin-bottom:7px;
-  font-size:14px;
+
+/* MONTHLY */
+
+.monthly-card,
+.long-card{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:25px;
+    margin-bottom:20px;
 }
 
-.track{
-  background:#e9edf2;
-  border-radius:999px;
-  overflow:hidden;
-  height:26px;
+.section-title{
+    margin:0 0 5px;
+    color:var(--navy);
+    font-size:22px;
+}
+
+.section-desc{
+    margin:0 0 20px;
+    color:var(--gray);
+    font-size:13px;
+}
+
+.vs-grid{
+    display:grid;
+    grid-template-columns:1fr 60px 1fr;
+    align-items:center;
+    gap:10px;
+}
+
+.vs-box{
+    border-radius:17px;
+    padding:23px 12px;
+    text-align:center;
+}
+
+.vs-box.rent{
+    background:#f1f7fd;
+    border:1px solid #d3e4f4;
+}
+
+.vs-box.interest{
+    background:#eff9f5;
+    border:1px solid #cce9dd;
+}
+
+.vs-box span{
+    display:block;
+    color:var(--gray);
+    font-size:13px;
+}
+
+.vs-box strong{
+    display:block;
+    margin-top:5px;
+    color:var(--navy);
+    font-size:30px;
+}
+
+.vs{
+    text-align:center;
+    color:#9c762d;
+    font-weight:900;
+    font-size:18px;
+}
+
+.month-diff{
+    margin-top:17px;
+    border-radius:13px;
+    padding:16px;
+    text-align:center;
+    background:#fff9e9;
+    border:1px solid #ead9ac;
+}
+
+.month-diff strong{
+    display:block;
+    color:#8d641d;
+    font-size:18px;
+}
+
+
+/* LONG TERM */
+
+.long-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
+
+.long-box{
+    border:1px solid var(--line);
+    border-radius:15px;
+    padding:22px;
+    text-align:center;
+}
+
+.long-box span{
+    display:block;
+    color:var(--gray);
+    font-size:12px;
+}
+
+.long-box strong{
+    display:block;
+    margin-top:4px;
+    color:var(--navy);
+    font-size:27px;
+}
+
+.bar-row{
+    display:grid;
+    grid-template-columns:100px 1fr;
+    gap:10px;
+    align-items:center;
+    margin-top:15px;
+}
+
+.bar-name{
+    font-size:13px;
+    font-weight:800;
+}
+
+.bar-track{
+    height:27px;
+    background:#edf1f4;
+    border-radius:100px;
+    overflow:hidden;
 }
 
 .bar{
-  height:100%;
-  min-width:2%;
-  border-radius:999px;
+    height:100%;
+    min-width:4%;
+    border-radius:100px;
 }
 
 .rent-bar{
-  background:#4c84c3;
+    background:var(--blue);
 }
 
-.buy-bar{
-  background:#268261;
+.interest-bar{
+    background:#3f785f;
 }
 
-.reason-box{
-  background:#f8fafc;
-  border:1px solid var(--line);
-  border-radius:15px;
-  padding:20px;
+
+/* 절감 강조 */
+
+.saving-box{
+    margin-top:24px;
+    padding:28px 20px;
+    border:2px solid var(--gold);
+    border-radius:18px;
+    background:
+        linear-gradient(
+            135deg,
+            #fff8e6,
+            #fffdf8
+        );
+
+    text-align:center;
 }
 
-.reason-box h3{
-  margin:0 0 10px;
-  color:var(--navy);
+.saving-box small{
+    display:block;
+    color:#896621;
+    font-weight:800;
+    margin-bottom:5px;
 }
 
-.reason-box ul{
-  padding-left:20px;
-  margin:0;
+.saving-box h3{
+    margin:0;
+    color:var(--navy);
+    font-size:20px;
 }
 
-.reason-box li{
-  margin:7px 0;
+.saving-amount{
+    margin:6px 0;
+    color:#a87820;
+    font-size:clamp(36px,7vw,48px);
+    font-weight:900;
 }
 
-.lead{
-  margin-top:30px;
-  background:#fff;
-  border:2px solid var(--gold);
-  border-radius:20px;
-  overflow:hidden;
+.saving-rate{
+    display:inline-block;
+    padding:7px 14px;
+    border-radius:100px;
+    background:var(--navy);
+    color:white;
+    font-size:13px;
+    font-weight:900;
+    margin-top:2px;
+}
+
+.saving-month{
+    margin-top:11px;
+    color:#665d4d;
+    font-size:14px;
+}
+
+.saving-note{
+    margin-top:15px;
+    padding-top:15px;
+    border-top:1px solid #e9d8ae;
+    color:#696358;
+    font-size:12px;
+}
+
+
+/* HOOK */
+
+.special-hook{
+    overflow:hidden;
+    border:2px solid var(--gold);
+    border-radius:21px;
+    margin-bottom:22px;
+    background:white;
+}
+
+.special-top{
+    padding:11px;
+    background:#8e692c;
+    color:white;
+    text-align:center;
+    font-size:13px;
+    font-weight:900;
+}
+
+.special-body{
+    padding:31px 24px;
+    text-align:center;
+    background:
+        linear-gradient(
+            135deg,
+            #fff8e7,
+            #fffdf8
+        );
+}
+
+.special-label{
+    display:inline-block;
+    padding:6px 13px;
+    border-radius:100px;
+    background:var(--navy);
+    color:var(--gold2);
+    font-size:12px;
+    font-weight:900;
+    margin-bottom:10px;
+}
+
+.special-body h2{
+    margin:0;
+    color:var(--navy);
+    font-size:clamp(24px,4vw,31px);
+    line-height:1.4;
+}
+
+.special-body p{
+    max-width:670px;
+    margin:13px auto 0;
+    color:#665f53;
+    font-size:15px;
+}
+
+.special-emphasis{
+    display:block;
+    margin-top:18px;
+    color:#93651e;
+    font-weight:900;
+    font-size:17px;
+}
+
+.special-property{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:22px;
+}
+
+.special-item{
+    background:white;
+    border:1px solid #e7d6ab;
+    border-radius:14px;
+    padding:18px 10px;
+}
+
+.special-item small{
+    display:block;
+    color:#7d7d7d;
+}
+
+.special-item strong{
+    display:block;
+    margin-top:2px;
+    color:var(--navy);
+    font-size:18px;
+}
+
+.special-item em{
+    display:block;
+    margin-top:5px;
+    color:#956b22;
+    font-size:13px;
+    font-style:normal;
+    font-weight:800;
+}
+
+
+/* LEAD */
+
+.lead-card{
+    border:2px solid var(--gold);
+    border-radius:20px;
+    overflow:hidden;
+    background:white;
 }
 
 .lead-head{
-  background:#fff8e9;
-  padding:24px;
-  text-align:center;
+    padding:29px 22px;
+    text-align:center;
+    background:#fff8e7;
+}
+
+.lead-head small{
+    color:#9e701f;
+    font-weight:900;
 }
 
 .lead-head h2{
-  margin:0;
-  color:var(--navy);
-  font-size:25px;
+    margin:5px 0 8px;
+    color:var(--navy);
+    font-size:25px;
 }
 
 .lead-head p{
-  margin:8px auto 0;
-  max-width:680px;
-  color:#6a727d;
+    max-width:650px;
+    margin:auto;
+    color:#6c7681;
+    font-size:14px;
 }
 
 .lead-body{
-  padding:24px;
+    padding:25px;
 }
 
-.lead-button{
-  width:100%;
-  border:0;
-  border-radius:12px;
-  padding:16px;
-  font-size:17px;
-  font-weight:900;
-  background:var(--green);
-  color:#fff;
-  cursor:pointer;
-  margin-top:16px;
+.property-box{
+    background:#f5f7f9;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:17px;
+    margin-bottom:20px;
 }
 
-.sub-actions{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin-top:10px;
+.property-box label{
+    display:block;
+    margin-bottom:8px;
+    font-size:14px;
+    font-weight:900;
 }
 
-.sub-button{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-decoration:none;
-  border:1px solid #cad3dd;
-  border-radius:11px;
-  padding:13px;
-  color:var(--navy);
-  background:#fff;
-  font-weight:800;
-  cursor:pointer;
+.agree{
+    display:flex;
+    gap:8px;
+    align-items:flex-start;
+    margin-top:15px;
+    color:#737d87;
+    font-size:12px;
 }
 
-.privacy{
-  margin-top:13px;
-  font-size:12px;
-  color:#7c8794;
+.agree input{
+    width:auto;
+    height:auto;
+    margin-top:3px;
+}
+
+.lead-btn{
+    width:100%;
+    margin-top:18px;
+    border:0;
+    border-radius:12px;
+    padding:18px 10px;
+    background:var(--green);
+    color:white;
+    font-size:18px;
+    font-weight:900;
+    cursor:pointer;
+}
+
+.lead-btn small{
+    display:block;
+    margin-top:3px;
+    font-size:12px;
+    font-weight:500;
+    opacity:.85;
+}
+
+.phone{
+    display:block;
+    margin-top:10px;
+    padding:13px;
+    border:1px solid #cbd4dc;
+    border-radius:11px;
+    color:var(--navy);
+    text-align:center;
+    text-decoration:none;
+    font-weight:900;
 }
 
 .status{
-  display:none;
-  margin-top:14px;
-  padding:12px 14px;
-  border-radius:10px;
-  font-size:13px;
+    display:none;
+    margin-top:13px;
+    padding:12px;
+    border-radius:10px;
+    font-size:13px;
 }
 
-.status.ok{
-  display:block;
-  background:#ecf8f2;
-  color:#176846;
+.status.success{
+    display:block;
+    background:#eaf7f1;
+    color:#176649;
 }
 
 .status.error{
-  display:block;
-  background:#fff0f0;
-  color:#9d3f3f;
+    display:block;
+    background:#fff0f0;
+    color:#9b3e3e;
 }
 
 .disclaimer{
-  margin-top:24px;
-  padding:18px;
-  border-radius:13px;
-  background:#fff9eb;
-  border:1px solid #eadbad;
-  font-size:12px;
-  color:#665a37;
-}
-
-.brand{
-  text-align:center;
-  margin-top:28px;
-  font-size:13px;
-  color:#8b95a1;
-}
-
-.required{
-  color:#c94a4a;
-}
-
-@media(max-width:720px){
-  .form-grid,
-  .core-grid,
-  .sub-actions{
-    grid-template-columns:1fr;
-  }
-
-  .card-body,
-  .lead-body{
+    margin-top:20px;
     padding:18px;
-  }
+    border:1px solid #ead9ac;
+    border-radius:13px;
+    background:#fff9eb;
+    color:#685e43;
+    font-size:12px;
+}
+
+.footer{
+    padding:30px 15px;
+    text-align:center;
+    color:#8c969f;
+    font-size:12px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .form-grid,
+    .money-grid,
+    .long-grid,
+    .special-property{
+        grid-template-columns:1fr;
+    }
+
+    .vs-grid{
+        grid-template-columns:1fr;
+    }
+
+    .vs{
+        padding:2px;
+    }
+
+    .card-body,
+    .lead-body{
+        padding:19px;
+    }
+
+    .bar-row{
+        grid-template-columns:80px 1fr;
+    }
+
 }
 </style>
 </head>
 
+
 <body>
 
+
 <section class="hero">
-  <div class="badge">
-    네오의 분양연구소 · 대표님 무료 계산기
-  </div>
 
-  <h1>
-    월세 계속 낼까?<br>
-    <span>우리 회사 사옥을 살까?</span>
-  </h1>
+    <div class="hero-badge">
+        네오의 분양연구소 · 무료 사옥 계산기
+    </div>
 
-  <p>
-    어려운 금융용어 없이 몇 가지만 입력하면
-    지금 조건에서 월세 유지와 사옥 매입 중
-    어느 쪽을 더 검토해볼 만한지 쉽게 비교해드립니다.
-  </p>
+    <h1>
+        지금 내는 월세,<br>
+        <span>사옥 금융이자와 비교해보셨나요?</span>
+    </h1>
+
+    <p>
+        희망 사옥가격과 대출조건을 입력하면
+        필요한 자기자금부터 월 금융이자,
+        그리고 5년·10년 누적 비용 차이까지
+        한 번에 확인할 수 있습니다.
+    </p>
+
 </section>
+
 
 
 <main class="container">
 
+
 <div class="notice">
-  <strong>사용방법은 간단합니다.</strong><br>
-  현재 내고 있는 월세와 검토 중인 사옥 가격 정도만 입력해보세요.
-  정확한 대출·세금 계산이 아니라
-  <strong>“사옥을 알아볼 가치가 있는지”</strong>
-  빠르게 판단하는 1차 계산기입니다.
+
+    <strong>
+        월세와 금융이자의 월 차이는 작아 보여도
+        10년 동안 누적하면 이야기가 달라질 수 있습니다.
+    </strong>
+
+    <br><br>
+
+    현재 월세와 예상 금융이자를 비교하고,
+    장기적으로 얼마의 비용 차이가 발생하는지
+    먼저 확인해보세요.
+
 </div>
 
 
+
 <section class="card">
 
-  <div class="card-title">
-    <h2>1. 지금 쓰고 있는 사무실</h2>
-    <p>현재 실제로 지출하고 있는 금액을 적어주세요.</p>
-  </div>
+<div class="card-head">
 
-  <div class="card-body">
+    <h2>
+        월세 VS 우리 회사 사옥 계산기
+    </h2>
 
-    <div class="form-grid">
+    <p>
+        실제 상담 전 대략적인 자금계획을 확인하기 위한 계산입니다.
+    </p>
 
-      <div class="field">
-        <label>
-          사업자 유형
-          <span class="help">
-            개인사업자인지 법인사업자인지 선택해주세요.
-          </span>
-        </label>
-
-        <select id="businessType">
-          <option value="">선택해주세요</option>
-          <option value="개인사업자">개인사업자</option>
-          <option value="법인사업자">법인사업자</option>
-        </select>
-      </div>
+</div>
 
 
-      <div class="field">
-        <label>
-          매달 내는 월세
-          <span class="help">
-            부가세를 제외한 월 임대료를 입력해주세요.
-          </span>
-        </label>
+<div class="card-body">
 
-        <div class="input-wrap">
-          <input
+
+<div class="form-grid">
+
+
+<div class="field">
+
+    <label>
+        사업자 유형
+
+        <span class="help">
+            개인사업자 또는 법인사업자를 선택해주세요.
+        </span>
+
+    </label>
+
+    <select id="businessType">
+
+        <option value="">
+            선택해주세요
+        </option>
+
+        <option value="개인사업자">
+            개인사업자
+        </option>
+
+        <option value="법인사업자">
+            법인사업자
+        </option>
+
+    </select>
+
+</div>
+
+
+
+<div class="field">
+
+    <label>
+        현재 매달 내는 월세
+
+        <span class="help">
+            관리비를 제외한 월 임대료입니다.
+        </span>
+
+    </label>
+
+    <div class="input-wrap">
+
+        <input
             id="monthlyRent"
             type="number"
             min="0"
-            placeholder="예: 350"
-          >
-          <span class="unit">만원</span>
-        </div>
-      </div>
+            placeholder="예: 100"
+        >
 
-
-      <div class="field">
-        <label>
-          매달 관리비
-          <span class="help">
-            정확히 모르시면 비워두셔도 됩니다.
-          </span>
-        </label>
-
-        <div class="input-wrap">
-          <input
-            id="managementFee"
-            type="number"
-            min="0"
-            placeholder="예: 80"
-          >
-          <span class="unit">만원</span>
-        </div>
-      </div>
-
-
-      <div class="field">
-        <label>
-          현재 보증금
-          <span class="help">
-            임대차 계약서에 적힌 보증금입니다.
-          </span>
-        </label>
-
-        <div class="input-wrap">
-          <input
-            id="deposit"
-            type="number"
-            min="0"
-            placeholder="예: 5000"
-          >
-          <span class="unit">만원</span>
-        </div>
-      </div>
+        <span class="unit">
+            만원
+        </span>
 
     </div>
 
-  </div>
-
-</section>
+</div>
 
 
 
-<section class="card">
+<div class="field">
 
-  <div class="card-title">
-    <h2>2. 알아보고 있는 사옥</h2>
-    <p>대략적인 예상가격만 알고 있어도 계산할 수 있습니다.</p>
-  </div>
+    <label>
+        현재 사무실 보증금
 
-  <div class="card-body">
+        <span class="help">
+            향후 반환받을 수 있는 보증금입니다.
+        </span>
 
-    <div class="form-grid">
+    </label>
 
-      <div class="field">
-        <label>
-          사옥 예상가격
-          <span class="help">
-            분양가 또는 매매가를 입력해주세요.
-          </span>
-        </label>
+    <div class="input-wrap">
 
-        <div class="input-wrap">
-          <input
-            id="purchasePrice"
+        <input
+            id="deposit"
             type="number"
             min="0"
-            placeholder="예: 50000"
-          >
-          <span class="unit">만원</span>
-        </div>
-      </div>
+            placeholder="예: 1000"
+        >
+
+        <span class="unit">
+            만원
+        </span>
+
+    </div>
+
+</div>
 
 
-      <div class="field">
-        <label>
-          사옥 구입에 쓸 수 있는 현금
-          <span class="help">
-            회사에서 현재 무리 없이 사용할 수 있는 금액입니다.
-          </span>
-        </label>
 
-        <div class="input-wrap">
-          <input
-            id="availableCash"
+<div class="field">
+
+    <label>
+        필요한 사무실 크기
+
+        <span class="help">
+            대략적인 희망면적이면 됩니다.
+        </span>
+
+    </label>
+
+    <div class="input-wrap">
+
+        <input
+            id="desiredArea"
             type="number"
             min="0"
-            placeholder="예: 15000"
-          >
-          <span class="unit">만원</span>
+            placeholder="예: 30"
+        >
+
+        <span class="unit">
+            평
+        </span>
+
+    </div>
+
+</div>
+
+
+
+<div class="field">
+
+    <label>
+        희망 사옥가격
+
+        <span class="help">
+            검토 중인 사옥의 대략적인 가격입니다.
+        </span>
+
+    </label>
+
+    <div class="input-wrap">
+
+        <input
+            id="officePrice"
+            type="number"
+            min="0"
+            placeholder="예: 30000"
+        >
+
+        <span class="unit">
+            만원
+        </span>
+
+    </div>
+
+</div>
+
+
+
+<div class="field">
+
+    <label>
+        현재 사용할 수 있는 보유자금
+
+        <span class="help">
+            사옥 구입에 사용할 수 있는 현금입니다.
+        </span>
+
+    </label>
+
+    <div class="input-wrap">
+
+        <input
+            id="cash"
+            type="number"
+            min="0"
+            placeholder="예: 7000"
+        >
+
+        <span class="unit">
+            만원
+        </span>
+
+    </div>
+
+</div>
+
+
+
+<div class="field full">
+
+    <div class="choice-title">
+        예상 대출비율
+    </div>
+
+    <span class="help" style="margin-bottom:9px;">
+        실제 대출 가능비율은 금융기관과 조건에 따라 달라질 수 있습니다.
+    </span>
+
+    <div class="choice-buttons">
+
+
+        <div class="choice-option">
+
+            <input
+                type="radio"
+                name="loanRatio"
+                id="loan60"
+                value="60"
+            >
+
+            <label for="loan60">
+                60%
+            </label>
+
         </div>
-      </div>
 
 
-      <div class="field">
-        <label>
-          예상 대출금리
-          <span class="help">
-            모르시면 4~5% 정도를 넣어 비교해보세요.
-          </span>
-        </label>
+        <div class="choice-option">
 
-        <div class="input-wrap">
-          <input
+            <input
+                type="radio"
+                name="loanRatio"
+                id="loan65"
+                value="65"
+            >
+
+            <label for="loan65">
+                65%
+            </label>
+
+        </div>
+
+
+        <div class="choice-option">
+
+            <input
+                type="radio"
+                name="loanRatio"
+                id="loan70"
+                value="70"
+                checked
+            >
+
+            <label for="loan70">
+                70%
+            </label>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<div class="field full">
+
+    <label>
+        예상 대출금리
+
+        <span class="help">
+            현재 예상되는 대출금리를 입력해주세요.
+        </span>
+
+    </label>
+
+    <div class="input-wrap">
+
+        <input
             id="interestRate"
             type="number"
             min="0"
             step="0.1"
-            placeholder="예: 4.5"
-          >
-          <span class="unit">%</span>
-        </div>
-      </div>
+            placeholder="예: 4.0"
+        >
 
-
-      <div class="field">
-        <label>
-          몇 년 기준으로 비교할까요?
-          <span class="help">
-            해당 지역에서 계속 사업할 예상기간입니다.
-          </span>
-        </label>
-
-        <select id="years">
-          <option value="">선택해주세요</option>
-          <option value="3">3년</option>
-          <option value="5">5년</option>
-          <option value="7">7년</option>
-          <option value="10">10년</option>
-        </select>
-      </div>
+        <span class="unit">
+            %
+        </span>
 
     </div>
 
-
-    <button class="calculate" onclick="calculate()">
-      내 회사 결과 확인하기
-    </button>
-
-  </div>
-
-</section>
-
-
-
-<section id="results" class="results">
-
-  <div class="result-summary">
-
-    <small id="resultMeta"></small>
-
-    <h2 id="mainResult"></h2>
-
-    <p id="mainExplanation"></p>
-
-  </div>
-
-
-  <div class="core-grid">
-
-    <div class="core">
-      <span>현재 월 고정비</span>
-      <strong id="monthlyCostResult">-</strong>
-    </div>
-
-    <div class="core">
-      <span>비교기간 동안 예상 임차비용</span>
-      <strong id="rentCostResult">-</strong>
-    </div>
-
-    <div class="core">
-      <span>사옥 구입 시 예상 필요대출</span>
-      <strong id="loanResult">-</strong>
-    </div>
-
-  </div>
-
-
-  <div class="simple-compare">
-
-    <h3>한눈에 비교</h3>
-
-    <div class="compare-line">
-
-      <div class="compare-info">
-        <span>월세를 계속 낼 경우</span>
-        <strong id="rentBarText"></strong>
-      </div>
-
-      <div class="track">
-        <div
-          id="rentBar"
-          class="bar rent-bar">
-        </div>
-      </div>
-
-    </div>
-
-
-    <div class="compare-line">
-
-      <div class="compare-info">
-        <span>사옥 매입의 예상 비용부담</span>
-        <strong id="buyBarText"></strong>
-      </div>
-
-      <div class="track">
-        <div
-          id="buyBar"
-          class="bar buy-bar">
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <div class="reason-box">
-
-    <h3>왜 이런 결과가 나왔을까요?</h3>
-
-    <ul id="reasonList"></ul>
-
-  </div>
-
-
-
-  <section class="lead">
-
-    <div class="lead-head">
-
-      <h2>
-        내 조건에 맞는 실제 사옥도 확인해볼까요?
-      </h2>
-
-      <p>
-        계산 결과가 괜찮게 나왔다면
-        현재 지역·예산·필요면적에 맞는
-        실제 오피스형 지식산업센터와 사옥을 비교해드릴 수 있습니다.
-      </p>
-
-    </div>
-
-
-    <div class="lead-body">
-
-      <div class="form-grid">
-
-        <div class="field">
-          <label>
-            대표님 성함
-            <span class="required">*</span>
-          </label>
-
-          <input
-            id="leadName"
-            type="text"
-            placeholder="예: 김대표"
-          >
-        </div>
-
-
-        <div class="field">
-          <label>
-            연락처
-            <span class="required">*</span>
-          </label>
-
-          <input
-            id="leadPhone"
-            type="tel"
-            placeholder="예: 010-1234-5678"
-          >
-        </div>
-
-
-        <div class="field">
-          <label>
-            희망지역
-            <span class="help">
-              사옥을 찾고 있는 지역입니다.
-            </span>
-          </label>
-
-          <select id="leadRegion">
-            <option value="">선택해주세요</option>
-            <option value="인천 남동산단">
-              인천 남동산단
-            </option>
-            <option value="구로·가산">
-              구로·가산
-            </option>
-            <option value="서울 서남권">
-              서울 서남권
-            </option>
-            <option value="인천">
-              인천
-            </option>
-            <option value="기타">
-              기타
-            </option>
-          </select>
-        </div>
-
-
-        <div class="field">
-          <label>
-            필요한 사무실 크기
-            <span class="help">
-              정확하지 않아도 됩니다.
-            </span>
-          </label>
-
-          <select id="leadArea">
-            <option value="">선택해주세요</option>
-            <option value="20평 이하">20평 이하</option>
-            <option value="20~40평">20~40평</option>
-            <option value="40~70평">40~70평</option>
-            <option value="70~100평">70~100평</option>
-            <option value="100평 이상">100평 이상</option>
-            <option value="잘 모르겠음">잘 모르겠음</option>
-          </select>
-        </div>
-
-
-        <div class="field">
-          <label>
-            예상 매입예산
-          </label>
-
-          <div class="input-wrap">
-            <input
-              id="leadBudget"
-              type="number"
-              min="0"
-              placeholder="예: 60000"
-            >
-            <span class="unit">만원</span>
-          </div>
-        </div>
-
-
-        <div class="field">
-          <label>
-            상담 희망내용
-          </label>
-
-          <select id="leadPurpose">
-            <option value="">선택해주세요</option>
-            <option value="사옥 매입 가능 여부">
-              사옥 매입 가능 여부
-            </option>
-            <option value="월세와 매입 비교">
-              월세와 매입 비교
-            </option>
-            <option value="K1 남동산단 상담">
-              K1 남동산단 상담
-            </option>
-            <option value="구로 생각공장 상담">
-              구로 생각공장 상담
-            </option>
-            <option value="조건에 맞는 사옥 추천">
-              조건에 맞는 사옥 추천
-            </option>
-          </select>
-        </div>
-
-
-        <div class="field full">
-          <label>
-            추가로 궁금한 내용
-          </label>
-
-          <textarea
-            id="leadMessage"
-            placeholder="예: 현재 직원 15명이고 구로 쪽 사옥을 알아보고 있습니다.">
-          </textarea>
-        </div>
-
-      </div>
-
-
-      <button
-        class="lead-button"
-        onclick="submitLead()">
-        무료 사옥 비교상담 신청하기
-      </button>
-
-
-      <div class="sub-actions">
-
-        <a
-          class="sub-button"
-          href="tel:01025948306">
-          전화 상담하기
-        </a>
-
-        <button
-          class="sub-button"
-          onclick="copyInquiry()">
-          상담내용 복사하기
-        </button>
-
-      </div>
-
-
-      <div class="privacy">
-        상담신청을 위해 입력한 정보는
-        상담 목적 외에는 사용하지 않습니다.
-        실제 개인정보 수집 시에는 별도의 개인정보 처리방침과
-        동의 절차를 추가해 운영하시기 바랍니다.
-      </div>
-
-
-      <div id="leadStatus" class="status"></div>
-
-    </div>
-
-  </section>
-
-
-
-  <div class="disclaimer">
-
-    <strong>참고해주세요.</strong><br><br>
-
-    이 계산기는 대표님이 사옥 매입을 검토할 가치가 있는지
-    빠르게 비교하기 위한 참고용 도구입니다.
-
-    계산 편의를 위해 사옥 취득 시 세금·등기 등 부대비용을
-    매입가격의 약 5%로 가정하고,
-    대출은 사옥가격과 입력하신 보유현금의 차액을 기준으로
-    단순 계산합니다.
-
-    실제 취득세, 부가세, 대출금액, 금리,
-    담보평가 및 세무처리는
-    개인사업자·법인사업자와 물건별로 달라질 수 있으므로
-    실제 계약 전에는 금융기관 및 세무전문가 확인이 필요합니다.
-
-  </div>
-
-</section>
-
-
-<div class="brand">
-  네오의 분양연구소 · 월세 VS 사옥 매입 계산기
 </div>
 
+
+
+<div class="field full">
+
+    <div class="choice-title">
+        얼마 동안 비교할까요?
+    </div>
+
+    <div class="period-buttons">
+
+
+        <div class="period-option">
+
+            <input
+                type="radio"
+                name="period"
+                id="period5"
+                value="5"
+            >
+
+            <label for="period5">
+                5년 비교
+            </label>
+
+        </div>
+
+
+        <div class="period-option">
+
+            <input
+                type="radio"
+                name="period"
+                id="period10"
+                value="10"
+                checked
+            >
+
+            <label for="period10">
+                10년 비교
+            </label>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+
+<button
+    class="calculate-btn"
+    onclick="calculateOffice()"
+>
+
+    월세 VS 사옥 금융이자 비교하기
+
+</button>
+
+
+</div>
+
+</section>
+
+
+
+<!-- 결과 -->
+
+<section
+    id="results"
+    class="results"
+>
+
+
+<section class="compare-hero">
+
+    <small id="resultInfo"></small>
+
+    <h2>
+        사옥 마련에 필요한 자금
+    </h2>
+
+    <p id="resultSummary"></p>
+
+</section>
+
+
+
+<div class="money-grid">
+
+
+    <div class="money-box">
+
+        <span>
+            희망 사옥가격
+        </span>
+
+        <strong id="resultOfficePrice">
+            -
+        </strong>
+
+    </div>
+
+
+    <div class="money-box">
+
+        <span>
+            예상 대출금액
+        </span>
+
+        <strong id="loanAmount">
+            -
+        </strong>
+
+    </div>
+
+
+    <div class="money-box highlight">
+
+        <span>
+            매입에 필요한 자기자금
+        </span>
+
+        <strong id="requiredEquity">
+            -
+        </strong>
+
+    </div>
+
+
+</div>
+
+
+
+<div class="money-grid">
+
+
+    <div class="money-box">
+
+        <span>
+            현재 보유자금
+        </span>
+
+        <strong id="currentCash">
+            -
+        </strong>
+
+    </div>
+
+
+    <div class="money-box">
+
+        <span>
+            보증금 포함 예상 가용자금
+        </span>
+
+        <strong id="availableCash">
+            -
+        </strong>
+
+    </div>
+
+
+    <div
+        id="cashGapBox"
+        class="money-box"
+    >
+
+        <span id="cashGapTitle">
+            추가 필요자금
+        </span>
+
+        <strong id="cashGap">
+            -
+        </strong>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- 월 비용 -->
+
+<section class="monthly-card">
+
+<h3 class="section-title">
+    현재 월세 VS 사옥 금융이자
+</h3>
+
+<p class="section-desc">
+    예상 대출금에 입력한 금리를 단순 적용한 월 이자와 현재 월세를 비교합니다.
+</p>
+
+
+<div class="vs-grid">
+
+
+    <div class="vs-box rent">
+
+        <span>
+            현재 매달 내는 월세
+        </span>
+
+        <strong id="monthlyRentResult">
+            -
+        </strong>
+
+    </div>
+
+
+    <div class="vs">
+        VS
+    </div>
+
+
+    <div class="vs-box interest">
+
+        <span>
+            예상 월 금융이자
+        </span>
+
+        <strong id="monthlyInterest">
+            -
+        </strong>
+
+    </div>
+
+
+</div>
+
+<div class="month-diff"><strong id="monthDifference"></strong></div>
+</section>
+<section class="long-card">
+<h3 class="section-title" id="longTitle">10년 누적비용 비교</h3>
+<p class="section-desc">현재 월세와 금리가 비교기간 동안 동일하다고 가정합니다.</p>
+<div class="long-grid">
+<div class="long-box"><span>누적 월세</span><strong id="totalRent"></strong></div>
+<div class="long-box"><span>누적 금융이자</span><strong id="totalInterest"></strong></div>
+</div>
+<div class="bar-row"><div class="bar-name">월세</div><div class="bar-track"><div class="bar rent-bar" id="rentBar"></div></div></div>
+<div class="bar-row"><div class="bar-name">금융이자</div><div class="bar-track"><div class="bar interest-bar" id="interestBar"></div></div></div>
+<div class="saving-box">
+<small>월세와 금융이자의 단순 비교</small>
+<h3 id="savingTitle">예상 누적 차이</h3>
+<div class="saving-amount" id="savingAmount"></div>
+<div class="saving-rate" id="savingRate"></div>
+<div class="saving-month" id="savingMonth"></div>
+<div class="saving-note">매입 총비용이나 투자수익이 아닙니다. 대출원금 상환, 취득·보유·매각 관련 세금, 관리비, 수선비, 자금의 기회비용 및 자산가격 변동은 포함하지 않습니다.</div>
+</div>
+</section>
+<section class="special-hook">
+<div class="special-top">계산 후 실제 조건도 확인해보세요</div>
+<div class="special-body">
+<div class="special-label">네오의 분양연구소</div>
+<h2>계산 결과보다 더 좋은 조건의<br>사옥이 있다면 어떨까요?</h2>
+<p>입력하신 예산과 희망면적을 기준으로 실제 가능한 호실과 적용 가능한 조건을 함께 확인해드립니다.</p>
+<div class="special-property">
+<div class="special-item"><small>서울 서남권</small><strong>구로 생각공장</strong><em>현재 가능한 호실과 조건 확인</em></div>
+<div class="special-item"><small>인천 남동산단</small><strong>케이원 K1 남동산단</strong><em>현재 가능한 호실과 조건 확인</em></div>
+</div></div></section>
+<section class="lead-card">
+<div class="lead-head"><small>내 자금 기준으로 확인</small><h2>내 자금으로 가능한 특별 호실 확인하기</h2><p>상담정보와 계산 결과를 함께 접수합니다.</p></div>
+<form class="lead-body" id="leadForm" onsubmit="event.preventDefault(); submitLead();" novalidate>
+<div class="property-box"><label for="propertyInterest">관심 현장</label><select id="propertyInterest" required>
+<option value="">선택해주세요</option><option>구로 생각공장</option><option>케이원 남동산단</option><option>두 현장 모두 비교</option><option>조건에 맞는 사옥 추천</option>
+</select></div>
+<div class="form-grid">
+<div class="field"><label for="leadName">이름 / 업체명</label><input id="leadName" autocomplete="name" maxlength="100" required></div>
+<div class="field"><label for="leadPhone">연락처</label><input id="leadPhone" type="tel" autocomplete="tel" placeholder="010-1234-5678" maxlength="30" required></div>
+<div class="field"><label for="moveDate">입주 희망시기</label><select id="moveDate"><option>미정</option><option>즉시</option><option>3개월 이내</option><option>6개월 이내</option><option>1년 이내</option></select></div>
+<div class="field"><label for="purpose">상담 목적</label><select id="purpose"><option>특별 조건 호실 확인</option><option>실사용 사옥 매입</option><option>임대·매입 비교 상담</option></select></div>
+<div class="field full"><label for="message">추가 문의내용</label><textarea id="message" rows="4" maxlength="2000"></textarea></div>
+</div>
+<label class="agree"><input type="checkbox" id="privacy" required><span>상담 접수 및 연락을 위해 이름/업체명, 연락처, 상담내용과 입력한 계산정보를 수집·이용하는 데 동의합니다. 수집정보는 상담 목적에 사용되며, 동의를 거부하면 온라인 상담 신청이 제한됩니다.</span></label>
+<button class="lead-btn" type="submit">내 자금으로 가능한 특별 호실 확인하기<small>구로 생각공장 · 케이원 남동산단</small></button>
+<a class="phone" href="tel:01025948306">전화 상담 010-2594-8306</a>
+<div id="leadStatus" class="status" role="status" aria-live="polite"></div>
+</form></section>
+<div class="disclaimer">본 계산은 입력 조건에 따른 단순 비교입니다. 실제 대출한도·금리·분양조건은 금융기관 및 현장 확인이 필요합니다. 반환 예정 보증금은 실제 반환 시기에 따라 사용 가능 여부가 달라집니다.</div>
+</section>
 </main>
-
-
-
+<footer class="footer">네오의 분양연구소 · 월세 VS 사옥 매입 계산기</footer>
 <script>
-
-/*
-==================================================
-실제 상담 DB를 받을 주소를 여기에 넣으세요.
-예:
-const LEAD_WEBHOOK_URL =
-"https://script.google.com/macros/s/...../exec";
-
-비워두면 상담 내용 복사 기능만 작동합니다.
-==================================================
-*/
-
+"use strict";
 const LEAD_WEBHOOK_URL = "https://sheetdb.io/api/v1/j0hmxy8scfwqs";
-
-
-/*
-계산 편의를 위한 기본 가정
-*/
-const ACQUISITION_COST_RATE = 0.05;
-
-
-
-function num(id){
-
-  const value =
-    parseFloat(
-      document.getElementById(id).value
-    );
-
-  return isNaN(value) ? 0 : value;
+// 실제 Google Sheet 1행 컬럼명. 금액: 만원, 면적: 평, 비율: %.
+const SHEET_COLUMNS = {
+createdAt:"상담신청 시간",property:"관심 현장",name:"이름/업체명",phone:"연락처",
+moveDate:"입주 희망시기",purpose:"상담 목적",businessType:"개인/법인",
+monthlyRent:"현재 월세",deposit:"현재 보증금",desiredArea:"희망 면적",
+officePrice:"고객이 입력한 희망 사옥가격",cash:"현재 보유자금",loanRatio:"선택 대출비율",
+loanAmount:"계산된 대출금",interestRate:"예상 금리",requiredEquity:"필요한 자기자금",
+availableCash:"보증금 포함 가용자금",monthlyInterest:"예상 월 금융이자",
+compareYears:"5년/10년",totalRent:"누적 월세",totalInterest:"누적 금융이자",
+saving:"예상 누적 차이",savingRate:"예상 차이율",message:"추가 문의내용"
+};
+const byId = id => document.getElementById(id);
+const value = id => byId(id).value.trim();
+const getNumber = id => Number(value(id));
+const money = n => n.toLocaleString("ko-KR",{maximumFractionDigits:2})+"만원";
+const show = (id,text) => { byId(id).textContent=text; };
+let leadBusy=false, leadComplete=false;
+function calculateData(){
+ const d={businessType:value("businessType")};
+ if(!d.businessType) throw new Error("사업자 유형을 선택해주세요.");
+ for(const id of ["monthlyRent","deposit","desiredArea","officePrice","cash","interestRate"]){
+  d[id]=getNumber(id);
+  if(value(id)==="" || !Number.isFinite(d[id]) || d[id]<0) throw new Error("계산 항목에 0 이상의 숫자를 모두 입력해주세요.");
+ }
+ if(d.officePrice<=0 || d.desiredArea<=0) throw new Error("희망 사옥가격과 희망면적은 0보다 크게 입력해주세요.");
+ d.loanRatio=Number(document.querySelector('input[name="loanRatio"]:checked').value);
+ d.compareYears=Number(document.querySelector('input[name="period"]:checked').value);
+ d.loanAmount=d.officePrice*d.loanRatio/100;
+ d.requiredEquity=d.officePrice-d.loanAmount;
+ d.availableCash=d.cash+d.deposit;
+ d.monthlyInterest=d.loanAmount*d.interestRate/100/12;
+ d.totalRent=d.monthlyRent*12*d.compareYears;
+ d.totalInterest=d.monthlyInterest*12*d.compareYears;
+ d.saving=d.totalRent-d.totalInterest;
+ d.savingRate=d.totalRent>0?d.saving/d.totalRent*100:"";
+ if(Object.values(d).some(v=>typeof v==="number"&&!Number.isFinite(v))) throw new Error("입력 숫자가 너무 큽니다.");
+ return d;
 }
-
-
-
-function money(value){
-
-  value = Math.round(value);
-
-  if(value >= 10000){
-
-    return (
-      (value / 10000)
-      .toLocaleString(
-        "ko-KR",
-        {
-          maximumFractionDigits:1
-        }
-      )
-      + "억원"
-    );
-
-  }
-
-  return (
-    value.toLocaleString("ko-KR")
-    + "만원"
-  );
+function renderResults(d,scroll){
+ show("resultInfo",d.businessType+" · 대출 "+d.loanRatio+"% · 금리 "+d.interestRate+"%");
+ show("resultSummary","희망 사옥가격을 기준으로 자기자금과 월 이자를 확인하세요.");
+ for(const [id,key] of Object.entries({resultOfficePrice:"officePrice",loanAmount:"loanAmount",requiredEquity:"requiredEquity",currentCash:"cash",availableCash:"availableCash",monthlyRentResult:"monthlyRent",monthlyInterest:"monthlyInterest",totalRent:"totalRent",totalInterest:"totalInterest"})) show(id,money(d[key]));
+ const gap=d.availableCash-d.requiredEquity;
+ show("cashGapTitle",gap>=0?"예상 여유자금":"추가 필요자금");
+ show("cashGap",money(Math.abs(gap)));
+ byId("cashGapBox").className="money-box "+(gap>=0?"good":"danger");
+ const diff=d.monthlyRent-d.monthlyInterest;
+ show("monthDifference",diff===0?"현재 월세와 예상 월 금융이자가 같습니다.":"월 금융이자가 현재 월세보다 "+money(Math.abs(diff))+(diff>0?" 적습니다.":" 많습니다."));
+ show("longTitle",d.compareYears+"년 누적비용 비교");
+ show("savingTitle",d.saving>=0?"월세 대비 금융이자 예상 절감액":"월세 대비 금융이자 예상 추가부담");
+ show("savingAmount",money(Math.abs(d.saving)));
+ show("savingRate",d.savingRate===""?"월세 0원: 차이율 산정 불가":Math.abs(d.savingRate).toFixed(1)+"% "+(d.saving>=0?"절감":"추가부담"));
+ show("savingMonth","월평균 차이 "+money(Math.abs(diff)));
+ const max=Math.max(d.totalRent,d.totalInterest,1);
+ byId("rentBar").style.width=d.totalRent/max*100+"%";
+ byId("interestBar").style.width=d.totalInterest/max*100+"%";
+ for(const id of ["rentBar","interestBar"]) byId(id).style.minWidth="0";
+ Object.assign(byId("results").dataset,d);
+ byId("results").style.display="block";
+ if(scroll) byId("results").scrollIntoView({behavior:"smooth",block:"start"});
 }
-
-
-
-function calculate(){
-
-  const businessType =
-    document.getElementById(
-      "businessType"
-    ).value;
-
-  const monthlyRent =
-    num("monthlyRent");
-
-  const management =
-    num("managementFee");
-
-  const deposit =
-    num("deposit");
-
-  const purchasePrice =
-    num("purchasePrice");
-
-  const availableCash =
-    num("availableCash");
-
-  const interestRate =
-    num("interestRate") / 100;
-
-  const years =
-    num("years");
-
-
-  if(!businessType){
-    alert("사업자 유형을 선택해주세요.");
-    return;
-  }
-
-  if(monthlyRent <= 0){
-    alert("현재 월세를 입력해주세요.");
-    return;
-  }
-
-  if(purchasePrice <= 0){
-    alert("사옥 예상가격을 입력해주세요.");
-    return;
-  }
-
-  if(availableCash < 0){
-    alert("사용 가능한 현금을 확인해주세요.");
-    return;
-  }
-
-  if(interestRate <= 0){
-    alert("예상 대출금리를 입력해주세요.");
-    return;
-  }
-
-  if(years <= 0){
-    alert("비교기간을 선택해주세요.");
-    return;
-  }
-
-
-
-  /*
-  현재 임차 비용
-  */
-
-  const monthlyCurrentCost =
-    monthlyRent + management;
-
-  const totalRentCost =
-    monthlyCurrentCost
-    * 12
-    * years;
-
-
-
-  /*
-  사옥 매입
-  */
-
-  const acquisitionCost =
-    purchasePrice
-    * ACQUISITION_COST_RATE;
-
-  const totalRequiredMoney =
-    purchasePrice
-    + acquisitionCost;
-
-  const estimatedLoan =
-    Math.max(
-      totalRequiredMoney
-      - availableCash,
-      0
-    );
-
-  const yearlyInterest =
-    estimatedLoan
-    * interestRate;
-
-  const totalInterest =
-    yearlyInterest
-    * years;
-
-
-  /*
-  원금은 자산으로 남으므로
-  비용 비교에서는 이자 + 부대비용을 중심으로 봅니다.
-  */
-
-  const simpleBuyCost =
-    acquisitionCost
-    + totalInterest;
-
-
-
-  /*
-  결과 차이
-  */
-
-  const difference =
-    totalRentCost
-    - simpleBuyCost;
-
-
-  const ratio =
-    totalRentCost > 0
-      ? Math.abs(difference)
-        / totalRentCost
-      : 0;
-
-
-
-  let title = "";
-  let description = "";
-  let reasons = [];
-
-
-  if(difference > 0 && ratio >= 0.15){
-
-    title =
-      "사옥 매입을 한 번 검토해볼 만합니다.";
-
-    description =
-      "입력한 조건에서는 장기간 월세를 계속 내는 비용보다 "
-      + "사옥을 보유하기 위한 금융비용이 상대적으로 낮게 계산됩니다. "
-      + "실제 대출 가능금액과 적합한 사옥을 확인해볼 단계입니다.";
-
-    reasons.push(
-      years
-      + "년 동안 현재 월세와 관리비로 약 "
-      + money(totalRentCost)
-      + "가 지출됩니다."
-    );
-
-    reasons.push(
-      "사옥 구입 시 단순 예상 대출은 약 "
-      + money(estimatedLoan)
-      + "입니다."
-    );
-
-    reasons.push(
-      "입력한 금리 기준 예상 이자와 취득 부대비용은 약 "
-      + money(simpleBuyCost)
-      + "로 계산됩니다."
-    );
-
-  }else if(
-    difference < 0
-    && ratio >= 0.15
-  ){
-
-    title =
-      "현재는 임대를 유지하는 편도 괜찮아 보입니다.";
-
-    description =
-      "입력한 조건에서는 사옥 매입에 필요한 금융비용이 "
-      + "현재 임대비용보다 부담이 큰 편입니다. "
-      + "매입가격을 낮추거나 자기자본을 늘린 뒤 다시 비교해보는 것이 좋습니다.";
-
-    reasons.push(
-      "현재 월 임대료와 관리비 부담이 "
-      + money(monthlyCurrentCost)
-      + " 수준입니다."
-    );
-
-    reasons.push(
-      "현재 보유현금을 기준으로 약 "
-      + money(estimatedLoan)
-      + "의 대출이 필요한 것으로 계산됩니다."
-    );
-
-    reasons.push(
-      "사옥가격 또는 금융조건을 낮춰 다시 비교해보면 결과가 달라질 수 있습니다."
-    );
-
-  }else{
-
-    title =
-      "임대와 매입 비용이 비슷합니다.";
-
-    description =
-      "단순 숫자만으로는 어느 쪽이 확실히 유리하다고 보기 어렵습니다. "
-      + "이 경우에는 직원 출퇴근, 사업기간, 향후 확장계획과 "
-      + "실제 대출조건까지 확인해서 판단하는 것이 좋습니다.";
-
-    reasons.push(
-      "현재 조건에서는 임대와 매입의 비용차이가 크지 않습니다."
-    );
-
-    reasons.push(
-      "장기간 같은 지역에서 사업한다면 사옥 매입의 장점이 커질 수 있습니다."
-    );
-
-    reasons.push(
-      "반대로 사업 확장이나 지역 이전 가능성이 크다면 임대의 유연성이 유리합니다."
-    );
-
-  }
-
-
-
-  document.getElementById(
-    "resultMeta"
-  ).textContent =
-    businessType
-    + " · "
-    + years
-    + "년 기준";
-
-
-  document.getElementById(
-    "mainResult"
-  ).textContent =
-    title;
-
-
-  document.getElementById(
-    "mainExplanation"
-  ).textContent =
-    description;
-
-
-  document.getElementById(
-    "monthlyCostResult"
-  ).textContent =
-    money(monthlyCurrentCost);
-
-
-  document.getElementById(
-    "rentCostResult"
-  ).textContent =
-    money(totalRentCost);
-
-
-  document.getElementById(
-    "loanResult"
-  ).textContent =
-    money(estimatedLoan);
-
-
-
-  document.getElementById(
-    "rentBarText"
-  ).textContent =
-    money(totalRentCost);
-
-
-  document.getElementById(
-    "buyBarText"
-  ).textContent =
-    money(simpleBuyCost);
-
-
-  const max =
-    Math.max(
-      totalRentCost,
-      simpleBuyCost,
-      1
-    );
-
-
-  document.getElementById(
-    "rentBar"
-  ).style.width =
-    (
-      totalRentCost
-      / max
-      * 100
-    )
-    + "%";
-
-
-  document.getElementById(
-    "buyBar"
-  ).style.width =
-    (
-      simpleBuyCost
-      / max
-      * 100
-    )
-    + "%";
-
-
-
-  const reasonList =
-    document.getElementById(
-      "reasonList"
-    );
-
-  reasonList.innerHTML = "";
-
-  reasons.forEach(
-    item => {
-
-      const li =
-        document.createElement("li");
-
-      li.textContent = item;
-
-      reasonList.appendChild(li);
-
-    }
-  );
-
-
-
-  /*
-  상담폼 예산 자동입력
-  */
-
-  document.getElementById(
-    "leadBudget"
-  ).value =
-    purchasePrice || "";
-
-
-  document.getElementById(
-    "results"
-  ).style.display =
-    "block";
-
-
-  document.getElementById(
-    "results"
-  ).scrollIntoView({
-    behavior:"smooth",
-    block:"start"
-  });
-
+function calculateOffice(){
+ try{renderResults(calculateData(),true);}catch(e){alert(e.message);}
 }
-
-
-
 function buildLeadData(){
-
-  return {
-
-    createdAt:
-      new Date().toISOString(),
-
-    name:
-      document.getElementById(
-        "leadName"
-      ).value.trim(),
-
-    phone:
-      document.getElementById(
-        "leadPhone"
-      ).value.trim(),
-
-    region:
-      document.getElementById(
-        "leadRegion"
-      ).value,
-
-    area:
-      document.getElementById(
-        "leadArea"
-      ).value,
-
-    budget:
-      document.getElementById(
-        "leadBudget"
-      ).value,
-
-    purpose:
-      document.getElementById(
-        "leadPurpose"
-      ).value,
-
-    message:
-      document.getElementById(
-        "leadMessage"
-      ).value.trim(),
-
-    businessType:
-      document.getElementById(
-        "businessType"
-      ).value,
-
-    monthlyRent:
-      document.getElementById(
-        "monthlyRent"
-      ).value,
-
-    managementFee:
-      document.getElementById(
-        "managementFee"
-      ).value,
-
-    deposit:
-      document.getElementById(
-        "deposit"
-      ).value,
-
-    purchasePrice:
-      document.getElementById(
-        "purchasePrice"
-      ).value,
-
-    availableCash:
-      document.getElementById(
-        "availableCash"
-      ).value,
-
-    interestRate:
-      document.getElementById(
-        "interestRate"
-      ).value,
-
-    years:
-      document.getElementById(
-        "years"
-      ).value
-
-  };
-
+ // 항상 최신 입력값으로 재계산하여 화면과 저장값이 어긋나지 않게 합니다.
+ const d=calculateData();
+ renderResults(d,false);
+ return {createdAt:new Date().toLocaleString("ko-KR",{timeZone:"Asia/Seoul"}),
+ property:value("propertyInterest"),name:value("leadName"),phone:value("leadPhone"),
+ moveDate:value("moveDate"),purpose:value("purpose"),message:value("message"),...d};
 }
-
-
-
-function validateLead(data){
-
-  if(!data.name){
-    alert("대표님 성함을 입력해주세요.");
-    return false;
-  }
-
-  if(!data.phone){
-    alert("연락처를 입력해주세요.");
-    return false;
-  }
-
-  return true;
+function toSheetRow(data){
+ return Object.fromEntries(Object.entries(SHEET_COLUMNS).map(([key,column])=>[column,data[key]??""]));
 }
-
-
-
 async function submitLead(){
-
-  const data =
-    buildLeadData();
-
-  if(!validateLead(data)){
-    return;
-  }
-
-
-  const status =
-    document.getElementById(
-      "leadStatus"
-    );
-
-
-  /*
-  Webhook 주소가 없는 경우
-  */
-
-  if(!LEAD_WEBHOOK_URL){
-
-    status.className =
-      "status ok";
-
-    status.textContent =
-      "현재 상담 DB 수신 주소가 연결되지 않았습니다. "
-      + "아래 '상담내용 복사하기' 버튼을 눌러 내용을 전달해주세요.";
-
-    return;
-  }
-
-
-  try{
-
-    const response =
-      await fetch(
-        LEAD_WEBHOOK_URL,
-        {
-          method:"POST",
-
-          headers:{
-            "Content-Type":
-              "application/json"
-          },
-
-          body:
-            JSON.stringify({ data: [data] })
-        }
-      );
-
-
-    if(!response.ok){
-      throw new Error(
-        "전송 실패"
-      );
-    }
-
-
-    status.className =
-      "status ok";
-
-    status.textContent =
-      "상담신청이 정상적으로 접수되었습니다. "
-      + "확인 후 연락드리겠습니다.";
-
-
-  }catch(error){
-
-    status.className =
-      "status error";
-
-    status.textContent =
-      "자동 접수에 실패했습니다. "
-      + "전화상담 또는 상담내용 복사 기능을 이용해주세요.";
-
-  }
-
+ if(leadBusy||leadComplete) return;
+ const status=byId("leadStatus"),button=document.querySelector(".lead-btn");
+ let data;
+ try{
+  data=buildLeadData();
+  if(!data.property) throw new Error("관심 현장을 선택해주세요.");
+  if(!data.name) throw new Error("이름 또는 업체명을 입력해주세요.");
+  if(!/^[+\d\s()-]+$/.test(data.phone)||data.phone.replace(/\D/g,"").length<9||data.phone.replace(/\D/g,"").length>15) throw new Error("연락 가능한 전화번호를 입력해주세요.");
+  if(!byId("privacy").checked) throw new Error("개인정보 수집·이용에 동의해주세요.");
+ }catch(e){status.className="status error";status.textContent=e.message;return;}
+ leadBusy=true;
+ const original=button.innerHTML;
+ button.disabled=true;
+ button.textContent="상담 신청을 접수하고 있습니다...";
+ status.className="status success";
+ status.textContent="상담 정보를 저장하고 있습니다...";
+ const controller=new AbortController();
+ const timeout=setTimeout(()=>controller.abort(),25000);
+ let sent=false;
+ try{
+  sent=true;
+  const response=await fetch(LEAD_WEBHOOK_URL,{
+   method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},
+   // RAW로 연락처의 앞자리 0과 텍스트를 그대로 저장합니다.
+   body:JSON.stringify({data:[toSheetRow(data)],mode:"RAW"}),signal:controller.signal
+  });
+  if(!response.ok) {sent=response.status>=500;throw new Error("HTTP "+response.status);}
+  const result=await response.json();
+  if(Number(result.created)!==1) throw new Error("저장 건수 확인 실패");
+  leadComplete=true;
+  status.className="status success";
+  status.textContent="상담 신청이 완료되었습니다. 입력해주신 조건을 기준으로 가능한 호실과 적용 조건을 확인 후 연락드리겠습니다.";
+  button.textContent="✓ 상담 신청 완료";
+ }catch(e){
+  status.className="status error";
+  status.textContent=sent
+   ?"서버의 저장 완료 응답을 확인하지 못했습니다. 이미 접수되었을 수 있으니 중복 신청 전에 010-2594-8306으로 접수 여부를 확인해주세요."
+   :"자동 접수에 실패했습니다. 잠시 후 다시 시도하거나 010-2594-8306으로 연락해주세요.";
+  button.disabled=false;
+  button.innerHTML=original;
+ }finally{
+  clearTimeout(timeout);
+  leadBusy=false;
+  if(leadComplete) button.disabled=true;
+ }
 }
-
-
-
-function copyInquiry(){
-
-  const data =
-    buildLeadData();
-
-
-  const resultText =
-`
-[네오의 분양연구소 사옥 상담 요청]
-
-대표자: ${data.name || "-"}
-연락처: ${data.phone || "-"}
-
-사업자: ${data.businessType || "-"}
-희망지역: ${data.region || "-"}
-필요면적: ${data.area || "-"}
-예상예산: ${
-  data.budget
-    ? data.budget + "만원"
-    : "-"
-}
-
-상담목적: ${data.purpose || "-"}
-
-현재 월세: ${
-  data.monthlyRent
-    ? data.monthlyRent + "만원"
-    : "-"
-}
-
-현재 관리비: ${
-  data.managementFee
-    ? data.managementFee + "만원"
-    : "-"
-}
-
-현재 보증금: ${
-  data.deposit
-    ? data.deposit + "만원"
-    : "-"
-}
-
-검토 사옥가격: ${
-  data.purchasePrice
-    ? data.purchasePrice + "만원"
-    : "-"
-}
-
-사용가능 현금: ${
-  data.availableCash
-    ? data.availableCash + "만원"
-    : "-"
-}
-
-추가문의:
-${data.message || "-"}
-`;
-
-
-  navigator.clipboard
-    .writeText(resultText)
-    .then(
-      () => {
-        alert(
-          "상담내용이 복사되었습니다."
-        );
-      }
-    )
-    .catch(
-      () => {
-        alert(
-          "복사에 실패했습니다."
-        );
-      }
-    );
-
-}
-
+// 입력 필드와 기존 디자인의 라벨을 연결합니다.
+document.querySelectorAll(".field").forEach(field=>{
+ const label=field.querySelector("label"),input=field.querySelector("input,select,textarea");
+ if(label&&input&&!label.htmlFor) label.htmlFor=input.id;
+});
 </script>
-
 </body>
 </html>
+
+
+

@@ -2946,6 +2946,43 @@ function buildLeadData(){
 
 
 
+/* 현재 상담 구글시트의 열 이름에 맞춰 저장한다. */
+function toSheetRow(data){
+
+    const calculationNote =
+        `관심현장: ${data.property || "-"}\n`
+        + `희망면적: ${data.desiredArea || "-"}평\n`
+        + `사옥가격: ${data.officePrice || "-"}만원\n`
+        + `보유자금: ${data.cash || "-"}만원\n`
+        + `대출비율: ${data.loanRatio || "-"}%\n`
+        + `대출금액: ${data.loanAmount || "-"}만원\n`
+        + `월 금융이자: ${data.monthlyInterest || "-"}만원\n`
+        + `비교기간: ${data.compareYears || "-"}년\n`
+        + `누적 차이: ${data.saving || "-"}만원`;
+
+    return{
+        createdAt: data.createdAt,
+        name: data.name,
+        phone: data.phone,
+        region: data.property,
+        area: data.desiredArea,
+        budget: data.officePrice,
+        purpose: data.purpose,
+        message: [data.message, calculationNote].filter(Boolean).join("\n\n"),
+        businessType: data.businessType,
+        monthlyRent: data.monthlyRent,
+        managementFee: "",
+        deposit: data.deposit,
+        purchasePrice: data.officePrice,
+        availableCash: data.cash,
+        interestRate: data.interestRate,
+        years: data.compareYears
+    };
+
+}
+
+
+
 /* 상담신청 */
 
 async function submitLead(){
@@ -3055,7 +3092,7 @@ async function submitLead(){
                     },
 
                     body:
-                        JSON.stringify({ data: [data], mode: "RAW", return_values: true })
+                        JSON.stringify({ data: [toSheetRow(data)], mode: "RAW", return_values: true })
 
                 }
 

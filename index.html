@@ -1420,191 +1420,1684 @@ textarea:focus{
 
 </div>
 
-<div class="month-diff"><strong id="monthDifference"></strong></div>
+
+
+<div class="month-diff">
+
+    <strong id="monthlyDifference">
+        -
+    </strong>
+
+    <div id="monthlyDifferenceText">
+        -
+    </div>
+
+</div>
+
+
 </section>
+
+
+
+<!-- 누적 -->
+
 <section class="long-card">
-<h3 class="section-title" id="longTitle">10년 누적비용 비교</h3>
-<p class="section-desc">현재 월세와 금리가 비교기간 동안 동일하다고 가정합니다.</p>
+
+
+<h3
+    class="section-title"
+    id="longTitle"
+>
+    10년 누적 비용 비교
+</h3>
+
+
+<p class="section-desc">
+    월세와 금융이자가 동일하게 유지된다는 단순 가정입니다.
+</p>
+
+
+
 <div class="long-grid">
-<div class="long-box"><span>누적 월세</span><strong id="totalRent"></strong></div>
-<div class="long-box"><span>누적 금융이자</span><strong id="totalInterest"></strong></div>
+
+
+    <div class="long-box">
+
+        <span id="rentLongLabel">
+            10년 누적 월세
+        </span>
+
+        <strong id="totalRent">
+            -
+        </strong>
+
+    </div>
+
+
+    <div class="long-box">
+
+        <span id="interestLongLabel">
+            10년 누적 금융이자
+        </span>
+
+        <strong id="totalInterest">
+            -
+        </strong>
+
+    </div>
+
+
 </div>
-<div class="bar-row"><div class="bar-name">월세</div><div class="bar-track"><div class="bar rent-bar" id="rentBar"></div></div></div>
-<div class="bar-row"><div class="bar-name">금융이자</div><div class="bar-track"><div class="bar interest-bar" id="interestBar"></div></div></div>
+
+
+
+<div class="bar-row">
+
+    <div class="bar-name">
+        월세
+    </div>
+
+    <div class="bar-track">
+
+        <div
+            id="rentBar"
+            class="bar rent-bar"
+        ></div>
+
+    </div>
+
+</div>
+
+
+
+<div class="bar-row">
+
+    <div class="bar-name">
+        금융이자
+    </div>
+
+    <div class="bar-track">
+
+        <div
+            id="interestBar"
+            class="bar interest-bar"
+        ></div>
+
+    </div>
+
+</div>
+
+
+
+<!-- 절감 강조 -->
+
 <div class="saving-box">
-<small>월세와 금융이자의 단순 비교</small>
-<h3 id="savingTitle">예상 누적 차이</h3>
-<div class="saving-amount" id="savingAmount"></div>
-<div class="saving-rate" id="savingRate"></div>
-<div class="saving-month" id="savingMonth"></div>
-<div class="saving-note">매입 총비용이나 투자수익이 아닙니다. 대출원금 상환, 취득·보유·매각 관련 세금, 관리비, 수선비, 자금의 기회비용 및 자산가격 변동은 포함하지 않습니다.</div>
+
+    <small id="savingSmall">
+        10년 단순 누적 비교
+    </small>
+
+    <h3 id="savingHeadline">
+        예상 누적 비용 차이
+    </h3>
+
+    <div
+        id="savingAmount"
+        class="saving-amount"
+    >
+        -
+    </div>
+
+
+    <div
+        id="savingRate"
+        class="saving-rate"
+    >
+        -
+    </div>
+
+
+    <div
+        id="savingMonth"
+        class="saving-month"
+    >
+        -
+    </div>
+
+
+    <div
+        id="savingNote"
+        class="saving-note"
+    >
+        실제 사옥 매입에는 대출원금 상환,
+        취득 및 보유비용 등을 함께 고려해야 합니다.
+    </div>
+
 </div>
+
+
 </section>
+
+
+
+<!-- 특별호실 -->
+
 <section class="special-hook">
-<div class="special-top">계산 후 실제 조건도 확인해보세요</div>
-<div class="special-body">
-<div class="special-label">네오의 분양연구소</div>
-<h2>계산 결과보다 더 좋은 조건의<br>사옥이 있다면 어떨까요?</h2>
-<p>입력하신 예산과 희망면적을 기준으로 실제 가능한 호실과 적용 가능한 조건을 함께 확인해드립니다.</p>
-<div class="special-property">
-<div class="special-item"><small>서울 서남권</small><strong>구로 생각공장</strong><em>현재 가능한 호실과 조건 확인</em></div>
-<div class="special-item"><small>인천 남동산단</small><strong>케이원 K1 남동산단</strong><em>현재 가능한 호실과 조건 확인</em></div>
-</div></div></section>
-<section class="lead-card">
-<div class="lead-head"><small>내 자금 기준으로 확인</small><h2>내 자금으로 가능한 특별 호실 확인하기</h2><p>상담정보와 계산 결과를 함께 접수합니다.</p></div>
-<form class="lead-body" id="leadForm" onsubmit="event.preventDefault(); submitLead();" novalidate>
-<div class="property-box"><label for="propertyInterest">관심 현장</label><select id="propertyInterest" required>
-<option value="">선택해주세요</option><option>구로 생각공장</option><option>케이원 남동산단</option><option>두 현장 모두 비교</option><option>조건에 맞는 사옥 추천</option>
-</select></div>
-<div class="form-grid">
-<div class="field"><label for="leadName">이름 / 업체명</label><input id="leadName" autocomplete="name" maxlength="100" required></div>
-<div class="field"><label for="leadPhone">연락처</label><input id="leadPhone" type="tel" autocomplete="tel" placeholder="010-1234-5678" maxlength="30" required></div>
-<div class="field"><label for="moveDate">입주 희망시기</label><select id="moveDate"><option>미정</option><option>즉시</option><option>3개월 이내</option><option>6개월 이내</option><option>1년 이내</option></select></div>
-<div class="field"><label for="purpose">상담 목적</label><select id="purpose"><option>특별 조건 호실 확인</option><option>실사용 사옥 매입</option><option>임대·매입 비교 상담</option></select></div>
-<div class="field full"><label for="message">추가 문의내용</label><textarea id="message" rows="4" maxlength="2000"></textarea></div>
+
+
+<div class="special-top">
+    계산 결과에서 끝내지 마세요
 </div>
-<label class="agree"><input type="checkbox" id="privacy" required><span>상담 접수 및 연락을 위해 이름/업체명, 연락처, 상담내용과 입력한 계산정보를 수집·이용하는 데 동의합니다. 수집정보는 상담 목적에 사용되며, 동의를 거부하면 온라인 상담 신청이 제한됩니다.</span></label>
-<button class="lead-btn" type="submit">내 자금으로 가능한 특별 호실 확인하기<small>구로 생각공장 · 케이원 남동산단</small></button>
-<a class="phone" href="tel:01025948306">전화 상담 010-2594-8306</a>
-<div id="leadStatus" class="status" role="status" aria-live="polite"></div>
-</form></section>
-<div class="disclaimer">본 계산은 입력 조건에 따른 단순 비교입니다. 실제 대출한도·금리·분양조건은 금융기관 및 현장 확인이 필요합니다. 반환 예정 보증금은 실제 반환 시기에 따라 사용 가능 여부가 달라집니다.</div>
+
+
+<div class="special-body">
+
+
+<div class="special-label">
+    현재 별도 조건으로 검토 가능한 호실
+</div>
+
+
+<h2>
+    실제 분양조건이 더 좋아진다면<br>
+    비용 차이는 더 커질 수 있습니다.
+</h2>
+
+
+<p>
+
+    같은 건물이라도 호실과 계약조건에 따라
+    실제 매입 부담은 달라질 수 있습니다.
+
+    현재
+
+    <strong>
+        구로 생각공장 · 케이원 남동산단
+    </strong>
+
+    에는 일반적인 조건과 별도로
+    검토할 수 있는
+
+    <strong>
+        특별 조건 분양 호실
+    </strong>
+
+    이 있습니다.
+
+</p>
+
+
+<span class="special-emphasis">
+
+    계산 결과보다 더 좋은 조건의
+    사옥이 있다면 어떨까요?
+
+</span>
+
+
+
+<div class="special-property">
+
+
+    <div class="special-item">
+
+        <small>
+            서울 구로
+        </small>
+
+        <strong>
+            구로 생각공장
+        </strong>
+
+        <em>
+            현재 특별 조건 가능 호실 확인
+        </em>
+
+    </div>
+
+
+    <div class="special-item">
+
+        <small>
+            인천 남동산단
+        </small>
+
+        <strong>
+            케이원 K1 남동산단
+        </strong>
+
+        <em>
+            현재 특별 조건 가능 호실 확인
+        </em>
+
+    </div>
+
+
+</div>
+
+
+</div>
+
 </section>
+
+
+
+<!-- DB -->
+
+<section class="lead-card">
+
+
+<div class="lead-head">
+
+    <small>
+        내 자금 기준으로 실제 호실 확인
+    </small>
+
+    <h2>
+        내 자금으로 가능한 특별 호실을 확인해보세요
+    </h2>
+
+    <p>
+        계산기에 입력한 보유자금,
+        희망면적과 월 부담 수준을 기준으로
+        현재 검토 가능한 호실과 적용 가능한 조건을 확인해드립니다.
+    </p>
+
+</div>
+
+
+
+<div class="lead-body">
+
+
+<div class="property-box">
+
+    <label>
+        어떤 현장을 확인하고 싶으신가요?
+    </label>
+
+    <select id="propertyInterest">
+
+        <option value="">
+            선택해주세요
+        </option>
+
+        <option value="구로 생각공장">
+            구로 생각공장
+        </option>
+
+        <option value="케이원 남동산단">
+            케이원 K1 남동산단
+        </option>
+
+        <option value="두 현장 모두 비교">
+            두 현장 모두 비교
+        </option>
+
+        <option value="조건에 맞는 사옥 추천">
+            내 조건에 맞는 사옥 추천
+        </option>
+
+    </select>
+
+</div>
+
+
+
+<div class="form-grid">
+
+
+<div class="field">
+
+    <label>
+        이름 / 업체명
+    </label>
+
+    <input
+        id="leadName"
+        type="text"
+        placeholder="예: 김대표 / 네오컴퍼니"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label>
+        연락처
+    </label>
+
+    <input
+        id="leadPhone"
+        type="tel"
+        placeholder="010-1234-5678"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label>
+        입주 희망시기
+    </label>
+
+    <select id="moveDate">
+
+        <option value="">
+            선택해주세요
+        </option>
+
+        <option value="즉시">
+            즉시
+        </option>
+
+        <option value="3개월 이내">
+            3개월 이내
+        </option>
+
+        <option value="6개월 이내">
+            6개월 이내
+        </option>
+
+        <option value="1년 이내">
+            1년 이내
+        </option>
+
+        <option value="미정">
+            아직 미정
+        </option>
+
+    </select>
+
+</div>
+
+
+<div class="field">
+
+    <label>
+        상담 목적
+    </label>
+
+    <select id="purpose">
+
+        <option value="">
+            선택해주세요
+        </option>
+
+        <option value="실입주 사옥">
+            직접 사용할 사옥
+        </option>
+
+        <option value="월세와 매입 비교">
+            월세와 사옥 매입 비교
+        </option>
+
+        <option value="현재 호실 확인">
+            현재 가능한 호실 확인
+        </option>
+
+        <option value="특별 조건 호실 확인">
+            특별 조건 호실 확인
+        </option>
+
+        <option value="대출 상담">
+            대출 가능 여부 상담
+        </option>
+
+    </select>
+
+</div>
+
+
+<div class="field full">
+
+    <label>
+        추가 문의사항
+    </label>
+
+    <textarea
+        id="message"
+        placeholder="예: 직원 15명, 30~40평 정도의 사옥을 찾고 있습니다."
+    ></textarea>
+
+</div>
+
+
+</div>
+
+
+
+<div class="agree">
+
+    <input
+        id="privacy"
+        type="checkbox"
+    >
+
+    <label for="privacy">
+
+        상담을 위해 이름, 연락처,
+        계산기 입력정보 및 상담내용을
+        수집·이용하는 것에 동의합니다.
+
+    </label>
+
+</div>
+
+
+
+<button
+    class="lead-btn"
+    onclick="submitLead()"
+>
+
+    내 자금으로 가능한 특별 호실 확인하기
+
+    <small>
+        구로 생각공장 · 케이원 남동산단
+    </small>
+
+</button>
+
+
+
+<a
+    class="phone"
+    href="tel:01025948306"
+>
+
+    전화로 바로 상담
+    010-2594-8306
+
+</a>
+
+
+
+<div
+    id="leadStatus"
+    class="status"
+></div>
+
+
+</div>
+
+</section>
+
+
+
+<div class="disclaimer">
+
+<strong>
+    계산 결과 안내
+</strong>
+
+<br><br>
+
+본 계산기는 사옥 매입을 검토하기 위한
+단순 참고용 계산기입니다.
+
+대출비율은 사용자가 선택한 비율을 단순 적용하며
+실제 대출 가능금액은
+금융기관, 담보평가, 사업자 신용,
+매출 및 부동산 조건에 따라 달라질 수 있습니다.
+
+금융이자는 입력한 금리가 전체 기간 동안
+동일하고 대출잔액 역시 변하지 않는다는
+단순 가정으로 계산됩니다.
+
+따라서 실제 대출의 원리금 상환,
+금리변동, 취득세, 등기비용,
+보유세, 관리비 및 기타 비용은
+별도로 고려해야 합니다.
+
+본 화면의 '절감' 또는 '비용 차이'는
+현재 월세와 단순 금융이자만 비교한 결과이며
+실제 사옥 매입의 전체 비용 절감을 보장하지 않습니다.
+
+특별 조건 적용 여부 역시
+호실, 계약시점 및 계약조건에 따라
+달라질 수 있습니다.
+
+</div>
+
+
+</section>
+
+
 </main>
-<footer class="footer">네오의 분양연구소 · 월세 VS 사옥 매입 계산기</footer>
+
+
+<footer class="footer">
+
+네오의 분양연구소<br>
+광고보다 분석을 먼저 합니다.
+
+</footer>
+
+
+
 <script>
-"use strict";
+
 const LEAD_WEBHOOK_URL = "https://sheetdb.io/api/v1/j0hmxy8scfwqs";
-// 실제 Google Sheet 1행 컬럼명. 금액: 만원, 면적: 평, 비율: %.
-const SHEET_COLUMNS = {
-createdAt:"상담신청 시간",property:"관심 현장",name:"이름/업체명",phone:"연락처",
-moveDate:"입주 희망시기",purpose:"상담 목적",businessType:"개인/법인",
-monthlyRent:"현재 월세",deposit:"현재 보증금",desiredArea:"희망 면적",
-officePrice:"고객이 입력한 희망 사옥가격",cash:"현재 보유자금",loanRatio:"선택 대출비율",
-loanAmount:"계산된 대출금",interestRate:"예상 금리",requiredEquity:"필요한 자기자금",
-availableCash:"보증금 포함 가용자금",monthlyInterest:"예상 월 금융이자",
-compareYears:"5년/10년",totalRent:"누적 월세",totalInterest:"누적 금융이자",
-saving:"예상 누적 차이",savingRate:"예상 차이율",message:"추가 문의내용"
-};
-const byId = id => document.getElementById(id);
-const value = id => byId(id).value.trim();
-const getNumber = id => Number(value(id));
-const money = n => n.toLocaleString("ko-KR",{maximumFractionDigits:2})+"만원";
-const show = (id,text) => { byId(id).textContent=text; };
-let leadBusy=false, leadComplete=false;
-function calculateData(){
- const d={businessType:value("businessType")};
- if(!d.businessType) throw new Error("사업자 유형을 선택해주세요.");
- for(const id of ["monthlyRent","deposit","desiredArea","officePrice","cash","interestRate"]){
-  d[id]=getNumber(id);
-  if(value(id)==="" || !Number.isFinite(d[id]) || d[id]<0) throw new Error("계산 항목에 0 이상의 숫자를 모두 입력해주세요.");
- }
- if(d.officePrice<=0 || d.desiredArea<=0) throw new Error("희망 사옥가격과 희망면적은 0보다 크게 입력해주세요.");
- d.loanRatio=Number(document.querySelector('input[name="loanRatio"]:checked').value);
- d.compareYears=Number(document.querySelector('input[name="period"]:checked').value);
- d.loanAmount=d.officePrice*d.loanRatio/100;
- d.requiredEquity=d.officePrice-d.loanAmount;
- d.availableCash=d.cash+d.deposit;
- d.monthlyInterest=d.loanAmount*d.interestRate/100/12;
- d.totalRent=d.monthlyRent*12*d.compareYears;
- d.totalInterest=d.monthlyInterest*12*d.compareYears;
- d.saving=d.totalRent-d.totalInterest;
- d.savingRate=d.totalRent>0?d.saving/d.totalRent*100:"";
- if(Object.values(d).some(v=>typeof v==="number"&&!Number.isFinite(v))) throw new Error("입력 숫자가 너무 큽니다.");
- return d;
+
+
+/* 숫자 */
+
+function getNumber(id){
+
+    const n =
+        parseFloat(
+            document
+            .getElementById(id)
+            .value
+        );
+
+    return isNaN(n) ? 0 : n;
+
 }
-function renderResults(d,scroll){
- show("resultInfo",d.businessType+" · 대출 "+d.loanRatio+"% · 금리 "+d.interestRate+"%");
- show("resultSummary","희망 사옥가격을 기준으로 자기자금과 월 이자를 확인하세요.");
- for(const [id,key] of Object.entries({resultOfficePrice:"officePrice",loanAmount:"loanAmount",requiredEquity:"requiredEquity",currentCash:"cash",availableCash:"availableCash",monthlyRentResult:"monthlyRent",monthlyInterest:"monthlyInterest",totalRent:"totalRent",totalInterest:"totalInterest"})) show(id,money(d[key]));
- const gap=d.availableCash-d.requiredEquity;
- show("cashGapTitle",gap>=0?"예상 여유자금":"추가 필요자금");
- show("cashGap",money(Math.abs(gap)));
- byId("cashGapBox").className="money-box "+(gap>=0?"good":"danger");
- const diff=d.monthlyRent-d.monthlyInterest;
- show("monthDifference",diff===0?"현재 월세와 예상 월 금융이자가 같습니다.":"월 금융이자가 현재 월세보다 "+money(Math.abs(diff))+(diff>0?" 적습니다.":" 많습니다."));
- show("longTitle",d.compareYears+"년 누적비용 비교");
- show("savingTitle",d.saving>=0?"월세 대비 금융이자 예상 절감액":"월세 대비 금융이자 예상 추가부담");
- show("savingAmount",money(Math.abs(d.saving)));
- show("savingRate",d.savingRate===""?"월세 0원: 차이율 산정 불가":Math.abs(d.savingRate).toFixed(1)+"% "+(d.saving>=0?"절감":"추가부담"));
- show("savingMonth","월평균 차이 "+money(Math.abs(diff)));
- const max=Math.max(d.totalRent,d.totalInterest,1);
- byId("rentBar").style.width=d.totalRent/max*100+"%";
- byId("interestBar").style.width=d.totalInterest/max*100+"%";
- for(const id of ["rentBar","interestBar"]) byId(id).style.minWidth="0";
- Object.assign(byId("results").dataset,d);
- byId("results").style.display="block";
- if(scroll) byId("results").scrollIntoView({behavior:"smooth",block:"start"});
+
+
+/* 대출비율 */
+
+function getLoanRatio(){
+
+    const selected =
+        document.querySelector(
+            'input[name="loanRatio"]:checked'
+        );
+
+    return selected
+        ? parseFloat(selected.value)
+        : 70;
+
 }
+
+
+/* 기간 */
+
+function getPeriod(){
+
+    const selected =
+        document.querySelector(
+            'input[name="period"]:checked'
+        );
+
+    return selected
+        ? parseInt(selected.value)
+        : 10;
+
+}
+
+
+/* 금액 */
+
+function money(value){
+
+    value =
+        Math.round(value);
+
+    if(value >= 10000){
+
+        return (
+            (value / 10000)
+            .toLocaleString(
+                "ko-KR",
+                {
+                    maximumFractionDigits:2
+                }
+            )
+            + "억원"
+        );
+
+    }
+
+    return (
+        value
+        .toLocaleString("ko-KR")
+        + "만원"
+    );
+
+}
+
+
+/* 계산 */
+
 function calculateOffice(){
- try{renderResults(calculateData(),true);}catch(e){alert(e.message);}
+
+    const businessType =
+        document
+        .getElementById(
+            "businessType"
+        )
+        .value;
+
+
+    const monthlyRent =
+        getNumber(
+            "monthlyRent"
+        );
+
+
+    const deposit =
+        getNumber(
+            "deposit"
+        );
+
+
+    const desiredArea =
+        getNumber(
+            "desiredArea"
+        );
+
+
+    const officePrice =
+        getNumber(
+            "officePrice"
+        );
+
+
+    const cash =
+        getNumber(
+            "cash"
+        );
+
+
+    const interestRate =
+        getNumber(
+            "interestRate"
+        );
+
+
+    const loanRatio =
+        getLoanRatio();
+
+
+    const years =
+        getPeriod();
+
+
+
+    if(!businessType){
+
+        alert(
+            "사업자 유형을 선택해주세요."
+        );
+
+        return;
+
+    }
+
+
+    if(monthlyRent <= 0){
+
+        alert(
+            "현재 월세를 입력해주세요."
+        );
+
+        return;
+
+    }
+
+
+    if(desiredArea <= 0){
+
+        alert(
+            "필요한 사무실 크기를 입력해주세요."
+        );
+
+        return;
+
+    }
+
+
+    if(officePrice <= 0){
+
+        alert(
+            "희망 사옥가격을 입력해주세요."
+        );
+
+        return;
+
+    }
+
+
+    if(cash < 0){
+
+        alert(
+            "현재 보유자금을 확인해주세요."
+        );
+
+        return;
+
+    }
+
+
+    if(interestRate <= 0){
+
+        alert(
+            "예상 대출금리를 입력해주세요."
+        );
+
+        return;
+
+    }
+
+
+
+    /* 매입 구조 */
+
+    const loanAmount =
+        officePrice
+        * (
+            loanRatio / 100
+        );
+
+
+    const requiredEquity =
+        officePrice
+        - loanAmount;
+
+
+    const availableCash =
+        cash + deposit;
+
+
+    const cashDifference =
+        availableCash
+        - requiredEquity;
+
+
+
+    /* 이자 */
+
+    const annualInterest =
+        loanAmount
+        * (
+            interestRate / 100
+        );
+
+
+    const monthlyInterest =
+        annualInterest / 12;
+
+
+
+    /* 월 차이 */
+
+    const monthlyDifference =
+        monthlyRent
+        - monthlyInterest;
+
+
+
+    /* 누적 */
+
+    const totalRent =
+        monthlyRent
+        * 12
+        * years;
+
+
+    const totalInterest =
+        monthlyInterest
+        * 12
+        * years;
+
+
+    const saving =
+        totalRent
+        - totalInterest;
+
+
+
+    /* 절감률 */
+
+    let savingRate = 0;
+
+
+    if(totalRent > 0){
+
+        savingRate =
+            (
+                saving
+                / totalRent
+            )
+            * 100;
+
+    }
+
+
+
+    /* 월평균 차이 */
+
+    const monthlySaving =
+        saving
+        / (
+            years * 12
+        );
+
+
+
+    /* 기본 */
+
+    document
+    .getElementById(
+        "resultInfo"
+    )
+    .textContent =
+        businessType
+        + " · "
+        + desiredArea
+        + "평 · 대출 "
+        + loanRatio
+        + "% · "
+        + years
+        + "년 비교";
+
+
+    document
+    .getElementById(
+        "resultSummary"
+    )
+    .textContent =
+        "희망 사옥가격 "
+        + money(officePrice)
+        + "을 기준으로 예상 대출금과 필요한 자기자금을 계산했습니다.";
+
+
+
+    document
+    .getElementById(
+        "resultOfficePrice"
+    )
+    .textContent =
+        money(officePrice);
+
+
+    document
+    .getElementById(
+        "loanAmount"
+    )
+    .textContent =
+        money(loanAmount);
+
+
+    document
+    .getElementById(
+        "requiredEquity"
+    )
+    .textContent =
+        money(requiredEquity);
+
+
+    document
+    .getElementById(
+        "currentCash"
+    )
+    .textContent =
+        money(cash);
+
+
+    document
+    .getElementById(
+        "availableCash"
+    )
+    .textContent =
+        money(availableCash);
+
+
+
+    /* 자기자금 차이 */
+
+    const gapBox =
+        document
+        .getElementById(
+            "cashGapBox"
+        );
+
+
+    if(cashDifference >= 0){
+
+        document
+        .getElementById(
+            "cashGapTitle"
+        )
+        .textContent =
+            "예상 여유자금";
+
+
+        document
+        .getElementById(
+            "cashGap"
+        )
+        .textContent =
+            money(
+                cashDifference
+            );
+
+
+        gapBox.className =
+            "money-box good";
+
+    }
+
+    else{
+
+        document
+        .getElementById(
+            "cashGapTitle"
+        )
+        .textContent =
+            "추가 필요자금";
+
+
+        document
+        .getElementById(
+            "cashGap"
+        )
+        .textContent =
+            money(
+                Math.abs(
+                    cashDifference
+                )
+            );
+
+
+        gapBox.className =
+            "money-box danger";
+
+    }
+
+
+
+    /* 월 */
+
+    document
+    .getElementById(
+        "monthlyRentResult"
+    )
+    .textContent =
+        money(
+            monthlyRent
+        );
+
+
+    document
+    .getElementById(
+        "monthlyInterest"
+    )
+    .textContent =
+        money(
+            monthlyInterest
+        );
+
+
+
+    if(monthlyDifference > 0){
+
+        document
+        .getElementById(
+            "monthlyDifference"
+        )
+        .textContent =
+            "월 금융이자가 현재 월세보다 "
+            + money(
+                monthlyDifference
+            )
+            + " 낮게 계산됩니다.";
+
+
+        document
+        .getElementById(
+            "monthlyDifferenceText"
+        )
+        .textContent =
+            "이 월 차이가 장기간 누적되면 아래와 같은 비용 차이가 발생합니다.";
+
+    }
+
+    else if(monthlyDifference < 0){
+
+        document
+        .getElementById(
+            "monthlyDifference"
+        )
+        .textContent =
+            "월 금융이자가 현재 월세보다 "
+            + money(
+                Math.abs(
+                    monthlyDifference
+                )
+            )
+            + " 높게 계산됩니다.";
+
+
+        document
+        .getElementById(
+            "monthlyDifferenceText"
+        )
+        .textContent =
+            "현재 입력조건에서는 월 부담만 보면 임대가 낮게 계산됩니다.";
+
+    }
+
+    else{
+
+        document
+        .getElementById(
+            "monthlyDifference"
+        )
+        .textContent =
+            "현재 월세와 예상 금융이자가 비슷합니다.";
+
+
+        document
+        .getElementById(
+            "monthlyDifferenceText"
+        )
+        .textContent =
+            "실제 매입조건과 장기 사업계획을 함께 비교해보세요.";
+
+    }
+
+
+
+    /* 장기 */
+
+    document
+    .getElementById(
+        "longTitle"
+    )
+    .textContent =
+        years
+        + "년 누적 비용 비교";
+
+
+    document
+    .getElementById(
+        "rentLongLabel"
+    )
+    .textContent =
+        years
+        + "년 누적 월세";
+
+
+    document
+    .getElementById(
+        "interestLongLabel"
+    )
+    .textContent =
+        years
+        + "년 누적 금융이자";
+
+
+    document
+    .getElementById(
+        "totalRent"
+    )
+    .textContent =
+        money(
+            totalRent
+        );
+
+
+    document
+    .getElementById(
+        "totalInterest"
+    )
+    .textContent =
+        money(
+            totalInterest
+        );
+
+
+
+    /* 그래프 */
+
+    const maxCost =
+        Math.max(
+            totalRent,
+            totalInterest,
+            1
+        );
+
+
+    document
+    .getElementById(
+        "rentBar"
+    )
+    .style.width =
+        Math.max(
+            4,
+            totalRent / maxCost * 100
+        )
+        + "%";
+
+
+    document
+    .getElementById(
+        "interestBar"
+    )
+    .style.width =
+        Math.max(
+            4,
+            totalInterest / maxCost * 100
+        )
+        + "%";
+
+
+
+    /* 절감 강조 */
+
+    document
+    .getElementById(
+        "savingSmall"
+    )
+    .textContent =
+        years
+        + "년 단순 누적 비교";
+
+
+    const savingHeadline =
+        document
+        .getElementById(
+            "savingHeadline"
+        );
+
+
+    const savingAmount =
+        document
+        .getElementById(
+            "savingAmount"
+        );
+
+
+    const savingRateEl =
+        document
+        .getElementById(
+            "savingRate"
+        );
+
+
+    const savingMonthEl =
+        document
+        .getElementById(
+            "savingMonth"
+        );
+
+
+    if(saving > 0){
+
+        savingHeadline.textContent =
+            "예상 금융이자 부담이 월세보다 낮게 계산됩니다";
+
+
+        savingAmount.textContent =
+            money(
+                saving
+            );
+
+
+        savingRateEl.textContent =
+            "월세 대비 약 "
+            + savingRate.toFixed(1)
+            + "% 낮게 계산";
+
+
+        savingMonthEl.textContent =
+            "월평균 약 "
+            + money(
+                monthlySaving
+            )
+            + "의 차이가 "
+            + years
+            + "년 동안 누적된 결과입니다.";
+
+    }
+
+    else if(saving < 0){
+
+        savingHeadline.textContent =
+            "예상 금융이자 부담이 월세보다 높게 계산됩니다";
+
+
+        savingAmount.textContent =
+            money(
+                Math.abs(
+                    saving
+                )
+            );
+
+
+        savingRateEl.textContent =
+            "현재 조건에서는 임대 비용이 더 낮음";
+
+
+        savingMonthEl.textContent =
+            "월평균 약 "
+            + money(
+                Math.abs(
+                    monthlySaving
+                )
+            )
+            + "의 차이가 발생합니다.";
+
+    }
+
+    else{
+
+        savingHeadline.textContent =
+            "누적 월세와 금융이자가 거의 동일합니다";
+
+
+        savingAmount.textContent =
+            "차이 없음";
+
+
+        savingRateEl.textContent =
+            "비슷한 비용 수준";
+
+
+        savingMonthEl.textContent =
+            "실제 특별 분양조건과 자금계획을 함께 비교해보세요.";
+
+    }
+
+
+
+    /* DB 저장 */
+
+    const results =
+        document
+        .getElementById(
+            "results"
+        );
+
+
+    results.dataset.officePrice =
+        Math.round(
+            officePrice
+        );
+
+
+    results.dataset.loanRatio =
+        loanRatio;
+
+
+    results.dataset.loanAmount =
+        Math.round(
+            loanAmount
+        );
+
+
+    results.dataset.requiredEquity =
+        Math.round(
+            requiredEquity
+        );
+
+
+    results.dataset.availableCash =
+        Math.round(
+            availableCash
+        );
+
+
+    results.dataset.monthlyInterest =
+        Math.round(
+            monthlyInterest
+        );
+
+
+    results.dataset.years =
+        years;
+
+
+    results.dataset.totalRent =
+        Math.round(
+            totalRent
+        );
+
+
+    results.dataset.totalInterest =
+        Math.round(
+            totalInterest
+        );
+
+
+    results.dataset.saving =
+        Math.round(
+            saving
+        );
+
+
+    results.dataset.savingRate =
+        savingRate.toFixed(1);
+
+
+
+    results.style.display =
+        "block";
+
+
+    results.scrollIntoView({
+
+        behavior:"smooth",
+        block:"start"
+
+    });
+
 }
+
+
+/* DB DATA */
+
 function buildLeadData(){
- // 항상 최신 입력값으로 재계산하여 화면과 저장값이 어긋나지 않게 합니다.
- const d=calculateData();
- renderResults(d,false);
- return {createdAt:new Date().toLocaleString("ko-KR",{timeZone:"Asia/Seoul"}),
- property:value("propertyInterest"),name:value("leadName"),phone:value("leadPhone"),
- moveDate:value("moveDate"),purpose:value("purpose"),message:value("message"),...d};
+
+    const results =
+        document
+        .getElementById(
+            "results"
+        );
+
+
+    return{
+
+        createdAt:
+            new Date()
+            .toISOString(),
+
+        property:
+            document
+            .getElementById(
+                "propertyInterest"
+            )
+            .value,
+
+        name:
+            document
+            .getElementById(
+                "leadName"
+            )
+            .value
+            .trim(),
+
+        phone:
+            document
+            .getElementById(
+                "leadPhone"
+            )
+            .value
+            .trim(),
+
+        moveDate:
+            document
+            .getElementById(
+                "moveDate"
+            )
+            .value,
+
+        purpose:
+            document
+            .getElementById(
+                "purpose"
+            )
+            .value,
+
+        message:
+            document
+            .getElementById(
+                "message"
+            )
+            .value
+            .trim(),
+
+        businessType:
+            document
+            .getElementById(
+                "businessType"
+            )
+            .value,
+
+        monthlyRent:
+            getNumber(
+                "monthlyRent"
+            ),
+
+        deposit:
+            getNumber(
+                "deposit"
+            ),
+
+        desiredArea:
+            getNumber(
+                "desiredArea"
+            ),
+
+        officePrice:
+            results
+            .dataset
+            .officePrice,
+
+        cash:
+            getNumber(
+                "cash"
+            ),
+
+        loanRatio:
+            results
+            .dataset
+            .loanRatio,
+
+        loanAmount:
+            results
+            .dataset
+            .loanAmount,
+
+        interestRate:
+            getNumber(
+                "interestRate"
+            ),
+
+        requiredEquity:
+            results
+            .dataset
+            .requiredEquity,
+
+        availableCash:
+            results
+            .dataset
+            .availableCash,
+
+        monthlyInterest:
+            results
+            .dataset
+            .monthlyInterest,
+
+        compareYears:
+            results
+            .dataset
+            .years,
+
+        totalRent:
+            results
+            .dataset
+            .totalRent,
+
+        totalInterest:
+            results
+            .dataset
+            .totalInterest,
+
+        saving:
+            results
+            .dataset
+            .saving,
+
+        savingRate:
+            results
+            .dataset
+            .savingRate
+
+    };
+
 }
-function toSheetRow(data){
- return Object.fromEntries(Object.entries(SHEET_COLUMNS).map(([key,column])=>[column,data[key]??""]));
-}
+
+
+
+/* 상담신청 */
+
 async function submitLead(){
- if(leadBusy||leadComplete) return;
- const status=byId("leadStatus"),button=document.querySelector(".lead-btn");
- let data;
- try{
-  data=buildLeadData();
-  if(!data.property) throw new Error("관심 현장을 선택해주세요.");
-  if(!data.name) throw new Error("이름 또는 업체명을 입력해주세요.");
-  if(!/^[+\d\s()-]+$/.test(data.phone)||data.phone.replace(/\D/g,"").length<9||data.phone.replace(/\D/g,"").length>15) throw new Error("연락 가능한 전화번호를 입력해주세요.");
-  if(!byId("privacy").checked) throw new Error("개인정보 수집·이용에 동의해주세요.");
- }catch(e){status.className="status error";status.textContent=e.message;return;}
- leadBusy=true;
- const original=button.innerHTML;
- button.disabled=true;
- button.textContent="상담 신청을 접수하고 있습니다...";
- status.className="status success";
- status.textContent="상담 정보를 저장하고 있습니다...";
- const controller=new AbortController();
- const timeout=setTimeout(()=>controller.abort(),25000);
- let sent=false;
- try{
-  sent=true;
-  const response=await fetch(LEAD_WEBHOOK_URL,{
-   method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},
-   // RAW로 연락처의 앞자리 0과 텍스트를 그대로 저장합니다.
-   body:JSON.stringify({data:[toSheetRow(data)],mode:"RAW"}),signal:controller.signal
-  });
-  if(!response.ok) {sent=response.status>=500;throw new Error("HTTP "+response.status);}
-  const result=await response.json();
-  if(Number(result.created)!==1) throw new Error("저장 건수 확인 실패");
-  leadComplete=true;
-  status.className="status success";
-  status.textContent="상담 신청이 완료되었습니다. 입력해주신 조건을 기준으로 가능한 호실과 적용 조건을 확인 후 연락드리겠습니다.";
-  button.textContent="✓ 상담 신청 완료";
- }catch(e){
-  status.className="status error";
-  status.textContent=sent
-   ?"서버의 저장 완료 응답을 확인하지 못했습니다. 이미 접수되었을 수 있으니 중복 신청 전에 010-2594-8306으로 접수 여부를 확인해주세요."
-   :"자동 접수에 실패했습니다. 잠시 후 다시 시도하거나 010-2594-8306으로 연락해주세요.";
-  button.disabled=false;
-  button.innerHTML=original;
- }finally{
-  clearTimeout(timeout);
-  leadBusy=false;
-  if(leadComplete) button.disabled=true;
- }
+
+    const data =
+        buildLeadData();
+
+
+    if(!data.property){
+
+        alert(
+            "관심 현장을 선택해주세요."
+        );
+
+        return;
+
+    }
+
+
+    if(!data.name){
+
+        alert(
+            "이름 또는 업체명을 입력해주세요."
+        );
+
+        return;
+
+    }
+
+
+    if(!data.phone){
+
+        alert(
+            "연락처를 입력해주세요."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        !document
+        .getElementById(
+            "privacy"
+        )
+        .checked
+    ){
+
+        alert(
+            "개인정보 수집·이용에 동의해주세요."
+        );
+
+        return;
+
+    }
+
+
+
+    const status =
+        document
+        .getElementById(
+            "leadStatus"
+        );
+
+
+    if(!LEAD_WEBHOOK_URL){
+
+        status.className =
+            "status success";
+
+
+        status.innerHTML =
+            "현재는 테스트 모드입니다.<br>"
+            + "DB 수신 주소를 연결하면 "
+            + "계산 결과와 상담정보가 자동 저장됩니다.";
+
+
+        console.log(
+            "상담신청 DB",
+            data
+        );
+
+
+        return;
+
+    }
+
+
+
+    try{
+
+        const response =
+            await fetch(
+
+                LEAD_WEBHOOK_URL,
+
+                {
+
+                    method:"POST",
+
+                    headers:{
+
+                        "Content-Type":
+                            "application/json"
+
+                    },
+
+                    body:
+                        JSON.stringify({ data: [data], mode: "RAW", return_values: true })
+
+                }
+
+            );
+
+
+        if(!response.ok){
+
+            throw new Error(
+                "DB 전송 실패"
+            );
+
+        }
+
+
+
+        status.className =
+            "status success";
+
+
+        status.innerHTML =
+            "신청이 완료되었습니다.<br>"
+            + "현재 가능한 특별 조건 호실을 확인 후 연락드리겠습니다.";
+
+
+    }
+
+    catch(error){
+
+        status.className =
+            "status error";
+
+
+        status.innerHTML =
+            "자동 접수 중 오류가 발생했습니다.<br>"
+            + "010-2594-8306으로 연락해주세요.";
+
+    }
+
 }
-// 입력 필드와 기존 디자인의 라벨을 연결합니다.
-document.querySelectorAll(".field").forEach(field=>{
- const label=field.querySelector("label"),input=field.querySelector("input,select,textarea");
- if(label&&input&&!label.htmlFor) label.htmlFor=input.id;
-});
+
 </script>
+
 </body>
 </html>
-
-
-

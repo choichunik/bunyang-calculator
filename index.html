@@ -3099,10 +3099,18 @@ async function submitLead(){
             );
 
 
+        const responseText =
+            await response.text();
+
+
         if(!response.ok){
 
             throw new Error(
-                "DB 전송 실패"
+                `SheetDB 응답 ${response.status}${
+                    responseText
+                    ? `: ${responseText.slice(0,160)}`
+                    : ""
+                }`
             );
 
         }
@@ -3122,13 +3130,19 @@ async function submitLead(){
 
     catch(error){
 
+        console.error(
+            "SheetDB 상담 접수 오류",
+            error
+        );
+
         status.className =
             "status error";
 
 
         status.innerHTML =
             "자동 접수 중 오류가 발생했습니다.<br>"
-            + "010-2594-8306으로 연락해주세요.";
+            + (error.message || "DB 응답을 확인해주세요.")
+            + "<br>010-2594-8306으로 연락해주세요.";
 
     }
 
